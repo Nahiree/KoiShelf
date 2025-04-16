@@ -1,0 +1,7 @@
+{
+  "name": "koishelfApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
