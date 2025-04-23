@@ -7,9 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" color="secondary">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Casita</ion-title>
+      <ion-icon name="notifications"></ion-icon>
     </ion-toolbar>
   </ion-header>
 
@@ -17,4 +18,28 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+
+  <ion-button>Default</ion-button>
+<ion-button shape="round">Round</ion-button>
+<ion-button>
+  <ion-icon slot="icon-only" name="heart"></ion-icon>
+</ion-button>
+<ion-button shape="round" color="secondary" [routerLink]="['/login']">
+  <ion-icon slot="icon-only" name="heart"></ion-icon>
+</ion-button>
+
 </ion-content>
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="account">
+      <ion-icon name="person"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="contact">
+      <ion-icon name="call"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+
