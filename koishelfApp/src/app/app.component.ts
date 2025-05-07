@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatabaseService } from './services/database.service'; // Ajusta la ruta si es necesario
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private db: DatabaseService) {
+    this.checkConnection();
+  }
+
+  checkConnection() {
+    this.db.fetchFirestoreCollection('manga').subscribe({
+      next: data => console.log('✅ Conexión exitosa. Datos:', data),
+      error: err => console.error('❌ Error al conectar a Firestore:', err)
+    });
+  }
 }
