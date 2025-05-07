@@ -1,0 +1,9 @@
+<div class="star-container">
+  <img
+    *ngFor="let star of getStars(); let i = index"
+    [src]="i < rating ? 'assets/icon/estrellita2.svg' : 'assets/icon/estrellita.svg'"
+    (click)="setRating(i + 1)"
+    class="star"
+    alt="star"
+  />
+</div>

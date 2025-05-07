@@ -1,0 +1,17 @@
+ion-card {
+    width: 125px;
+    height: 192px;
+}
+
+ion-card img {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+ion-card-content {
+    padding: 2px 5px;
+    gap: 4px;
+}

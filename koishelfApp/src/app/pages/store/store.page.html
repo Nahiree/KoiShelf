@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">store</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button>Prueba botón</ion-button> 
+  <app-buttonlinear label = "buenasnoches" 
+  color="purple">
+  </app-buttonlinear>
+  <app-card-with-title></app-card-with-title>
+  <app-card-with-progress></app-card-with-progress>
+  <app-card-store></app-card-store>
+  <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+  <app-menu></app-menu>
+</ion-content>

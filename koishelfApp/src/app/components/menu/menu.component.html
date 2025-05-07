@@ -1,12 +1,26 @@
 <ion-tabs>
   <!-- Tab bar -->
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <img src="assets/icon/home.svg" alt="home">
+    <ion-tab-button tab="home"
+    [ngClass]="{ 'active': selectedTab === 'home' }" 
+      (click)="selectTab('home')"
+      [routerLink]="['/home']">
+      <img 
+        [src]="selectedTab === 'home' ? 'assets/icon/home2.svg' : 'assets/icon/home.svg'" 
+        alt="home icon" 
+        class="tab-icon"
+      />
       <ion-label>Inicio</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="contact">
-      <img src="assets/icon/tienda.svg" alt="compra">
+    <ion-tab-button tab="store"
+    [ngClass]="{ 'active': selectedTab === 'store' }" 
+      (click)="selectTab('store')"
+      [routerLink]="['/store']">
+      <img 
+        [src]="selectedTab === 'store' ? 'assets/icon/tienda2.svg' : 'assets/icon/tienda.svg'" 
+        alt="home icon" 
+        class="tab-icon"
+      />
       <ion-label>Tienda</ion-label>
     </ion-tab-button>
     <ion-tab-button tab="settings">

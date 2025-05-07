@@ -8,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent  implements OnInit {
 
+  selectedTab: string = 'home'; // Pestaña que estará activa al principio
+
   constructor() { }
 
   ngOnInit() {}
 
+  selectTab(tab: string) {
+    this.selectedTab = tab;
+  }
+
 }
+
+
