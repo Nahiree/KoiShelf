@@ -8,6 +8,8 @@ ion-label {
 }
 
 ion-tab-bar {
+    width: 100%;
+    height: 56px;
     padding: 10px 0px;
     background-color: var(--ion-color-primary);
 }
@@ -16,12 +18,6 @@ ion-tab-button {
     background-color: var(--ion-color-primary);
 }
 
-ion-tab-button.active {
-    --color: var(--ion-color-secondary)
-  }
 
-  ion-tab-button:hover {
-    opacity: 2 !important;
-    filter: none !important;
-    --background-hover: transparent;
-  }
+
+

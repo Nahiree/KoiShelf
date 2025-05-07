@@ -4,7 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <a href="google.com" style="color: white;">Ir a google</a>
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">store</ion-title>
@@ -18,5 +19,8 @@
   <app-card-with-progress></app-card-with-progress>
   <app-card-store></app-card-store>
   <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
-  <app-menu></app-menu>
 </ion-content>
+
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>

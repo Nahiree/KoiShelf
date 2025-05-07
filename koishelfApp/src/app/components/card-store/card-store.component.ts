@@ -11,6 +11,6 @@ export class CardStoreComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-  puntuacionDelUsuario: number = 0;
+  puntuacionDelUsuario: number = 3;
 
 }

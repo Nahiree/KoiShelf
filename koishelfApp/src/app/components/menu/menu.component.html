@@ -1,10 +1,11 @@
-<ion-tabs>
+
   <!-- Tab bar -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home"
+    [routerLink]="['/home']"
     [ngClass]="{ 'active': selectedTab === 'home' }" 
       (click)="selectTab('home')"
-      [routerLink]="['/home']">
+      >
       <img 
         [src]="selectedTab === 'home' ? 'assets/icon/home2.svg' : 'assets/icon/home.svg'" 
         alt="home icon" 
@@ -13,9 +14,10 @@
       <ion-label>Inicio</ion-label>
     </ion-tab-button>
     <ion-tab-button tab="store"
+    [routerLink]="['/store']"
     [ngClass]="{ 'active': selectedTab === 'store' }" 
       (click)="selectTab('store')"
-      [routerLink]="['/store']">
+      >
       <img 
         [src]="selectedTab === 'store' ? 'assets/icon/tienda2.svg' : 'assets/icon/tienda.svg'" 
         alt="home icon" 
@@ -36,4 +38,4 @@
       <ion-label>Biblioteca</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-tabs>
+
