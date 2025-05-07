@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DatabaseService } from './services/database.service'; // Ajusta la ruta si es necesario
+import { DatabaseService } from './services/database.service'; 
 
 @Component({
   selector: 'app-root',
