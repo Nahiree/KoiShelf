@@ -17,5 +17,5 @@ export class StorePage implements OnInit {
     alert("¡Hola! Este es un mensaje.");
   }
 
-  puntuacionDelUsuario: number = 3;
+  puntuacionDelUsuario: number = 0;
 }
