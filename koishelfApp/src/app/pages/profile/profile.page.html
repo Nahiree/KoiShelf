@@ -13,7 +13,8 @@
       <ion-col size="auto" class="ion-text-center">
         <img src="assets/photo-profile/fotoperfil.svg" alt="avatar" class="distancia">
         <h4 class="distancia">usuario</h4>
-        <ion-button color="secondary"  class="distancia">
+        <ion-button class="distancia boton-personalizado" 
+        [routerLink]="['/edit-profile']">
           Editar perfil
         </ion-button>
       </ion-col>
@@ -21,15 +22,15 @@
     <ion-row>
       <ion-col>
         <ion-list lines="none">
-          <ion-item>
+          <ion-item [routerLink]="['/notifications']">
             <ion-icon aria-hidden="true" name="file-tray" slot="start"></ion-icon>
             <ion-label>Historial</ion-label>
           </ion-item>
-          <ion-item>
+          <ion-item [routerLink]="['/premium']">
             <ion-icon aria-hidden="true" name="wallet" slot="start"></ion-icon>
             <ion-label>Premium</ion-label>
           </ion-item>
-          <ion-item>
+          <ion-item [routerLink]="['/preferences']">
             <ion-icon aria-hidden="true" name="heart-sharp" slot="start"></ion-icon>
             <ion-label>Preferencias</ion-label>
           </ion-item>
