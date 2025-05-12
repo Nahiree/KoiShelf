@@ -36,6 +36,34 @@ const routes: Routes = [
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
 
+  {
+    path: 'profile', // Nueva ruta para el perfil
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule) // Ajusta la ruta a donde esté tu módulo
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'premium',
+    loadChildren: () => import('./pages/premium/premium.module').then( m => m.PremiumPageModule)
+  },
+  {
+    path: 'preferences',
+    loadChildren: () => import('./pages/preferences/preferences.module').then( m => m.PreferencesPageModule)
+  },
+  {
+    path: 'genres',
+    loadChildren: () => import('./pages/genres/genres.module').then( m => m.GenresPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
+  {
+    path: 'news',
+    loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
+  }
 ];
 
 @NgModule({
