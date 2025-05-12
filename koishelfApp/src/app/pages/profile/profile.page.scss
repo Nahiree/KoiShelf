@@ -22,9 +22,7 @@ h4{
 }
 
 ion-content {
-  background-color: var(--ion-color-primary);
-  width: 100vw;
-  height: 100vh;
+  --background: var(--ion-color-primary);
 }
 
 ion-grid {
