@@ -35,3 +35,26 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+// mis estilos personalizados 
+@font-face {
+    font-family: "Atkinson-Regular";
+    src: url("./assets/fonts/AtkinsonHyperlegible-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Atkinson-Bold";
+    font-weight: Bold;
+    src: url("./assets/fonts/AtkinsonHyperlegible-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Roboto-Medium";
+    src: url("./assets/fonts/Roboto-Medium.ttf");
+  }
+  @font-face {
+    font-family: "Roboto-Regular";
+    src: url("./assets/fonts/Roboto-Regular.ttf");
+  }

@@ -1,3 +1,120 @@
-ion-button{
-    --background-color: --secondary;
+
+*{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: column;
 }
+ion-content.login-content {
+    --background: #151F25;
+    color: #E0DCC5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .login-content {
+    display: flex; 
+    justify-content: center; 
+    display: flex;
+    
+    .login-card {
+      color: #E0DCC5;
+      justify-content: center;
+      align-items: center;
+      height: 100%; 
+      position: relative;
+      padding: 10px;
+      background-color: transparent;
+  
+      h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        font-family: "Atkinson-Bold", sans-serif;
+      }
+  
+      ion-item {
+        font-family: "Roboto-Regular", sans-serif !important;
+        width: 100%;
+        margin-top: 15px;
+        
+        --background: transparent;
+        --highlight-color-focused: #f44336;
+        color: #E0DCC5;
+        align-self: center;
+        
+      }
+  
+      ion-input {
+        color: #E0DCC5;
+        
+      }
+    .line{
+        height: 0.5px;
+        width: 95%;
+        background-color: #E0DCC5 ;
+        align-self: center;
+    }
+      
+  
+      .forgot-password {
+        font-family: "Roboto-Regular", sans-serif;
+        text-align: right;
+        font-size: 0.9em;
+        margin-top: 10px;
+        color: #E0DCC5;
+        margin-left: 30%;
+        text-decoration: none;
+      }
+  
+      .custom-button {
+        align-self: center;
+        text-transform: none !important;
+        font-family: 'Atkinson-Bold', sans-serif !important;
+        font-size: 1.8em;
+        letter-spacing: normal;
+        margin-top: 20%;
+        --background: #DB3F3A;
+        --color: #E0DCC5;
+        --border-radius: 8px;
+        --min-width: unset;
+        width: 80%;
+        height: 25%; /* alto exacto */
+        --padding-top: 0;
+        --padding-bottom: 0;
+      }
+    }
+  
+   
+    }
+    .register-link {
+      display: flex;
+        flex-direction: row;
+        gap: 5px;
+      font-family: "Roboto-Regular", sans-serif;
+      text-align: center;
+      margin-top: 20%;
+      font-size: 0.9em;
+      color: #E0DCC5;
+    
+      a {
+          color: #E0DCC5;
+          font-family: "Roboto-Medium", sans-serif;
+        text-decoration: none;
+      }
+    }
+  
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; // espaciado entre campos, puedes ajustar
+    justify-content: center;
+  }
+  small{
+    color: #DB3F3A !important;
+ }

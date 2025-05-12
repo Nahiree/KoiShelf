@@ -18,7 +18,23 @@ const routes: Routes = [
   {
     path: 'store',
     loadChildren: () => import('./pages/store/store.module').then( m => m.StorePageModule)
+  },  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'password',
+    loadChildren: () => import('./pages/password/password.module').then( m => m.PasswordPageModule)
+  },
+  {
+    path: 'start',
+    loadChildren: () => import('./pages/start/start.module').then( m => m.StartPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+  },
+
 ];
 
 @NgModule({

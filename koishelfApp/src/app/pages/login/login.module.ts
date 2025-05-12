@@ -15,9 +15,14 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     FormsModule,
     IonicModule,
     SharedModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    ReactiveFormsModule,
   ],
   declarations: [LoginPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LoginPageModule {}
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
