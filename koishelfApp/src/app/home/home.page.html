@@ -1,33 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>KoiShelf</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" color="secondary">
-    <ion-toolbar>
-      <ion-title size="large">Casita</ion-title>
-      <ion-icon name="notifications"></ion-icon>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<app-news></app-news>
+
+<ion-card>
+  <ion-card-header>
+    <img src="assets/manga-cover/fma.jpg" alt="">
+    <ion-card-title>Card Title</ion-card-title>
+  </ion-card-header>
+</ion-card>
+
+
 
   <ion-button>Default</ion-button>
 <ion-button shape="round">Round</ion-button>
 <ion-button>
   <ion-icon slot="icon-only" name="heart"></ion-icon>
 </ion-button>
-<ion-button shape="round" color="secondary" [routerLink]="['/login']">
-  <ion-icon slot="icon-only" name="heart"></ion-icon>
+
   
-</ion-button>
+
 <app-menu></app-menu>
 </ion-content>
 <ion-footer>
