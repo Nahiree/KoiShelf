@@ -32,7 +32,7 @@ export class NewsComponent {
   ngOnInit() {
     setInterval(() => {
       this.fadeToNext();
-    }, 3000); // Cambia cada 3 segundos
+    }, 2990); // Cambia cada 3 segundos
   }
 
   fadeToNext() {
@@ -41,12 +41,13 @@ export class NewsComponent {
     setTimeout(() => {
       this.currentIndex = (this.currentIndex + 1) % this.news.length;
       this.fading = false;
-    }, 300); // Duración del fade-out
+    }, 250); // Duración del fade-out
   }
 
   setIndex(index: number) {
     this.currentIndex = index;
   }
 }
+
 
 

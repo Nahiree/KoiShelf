@@ -25,8 +25,16 @@
       />
       <ion-label>Tienda</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <img src="assets/icon/perfil.svg" alt="perfil">
+    <ion-tab-button tab="profile"
+    [routerLink]="['/profile']"
+    [ngClass]="{ 'active': selectedTab === 'profile' }" 
+      (click)="selectTab('profile')"
+    >
+      <img 
+        [src]="selectedTab === 'profile' ? 'assets/icon/perfil2.svg' : 'assets/icon/perfil.svg'" 
+        alt="home icon" 
+        class="tab-icon"
+      />
       <ion-label>Perfil</ion-label>
     </ion-tab-button>
     <ion-tab-button tab="settings">

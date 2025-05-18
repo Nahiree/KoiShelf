@@ -11,17 +11,38 @@
 
 <ion-content [fullscreen]="true">
   <ion-toolbar>
+  <div class="searchbar-wrapper">
     <ion-searchbar></ion-searchbar>
-  </ion-toolbar>
+  </div>
+</ion-toolbar>
 
 <app-news></app-news>
 
-<ion-card>
-  <ion-card-header>
-    <img src="assets/manga-cover/fma.jpg" alt="">
-    <ion-card-title>Card Title</ion-card-title>
-  </ion-card-header>
-</ion-card>
+<ion-card-title>Nuevos Lanzamientos</ion-card-title>
+
+<ion-slides [options]="slideOpts" class="horizontal-swiper">
+  <ion-slide *ngFor="let manga of nuevosLanzamientos">
+    <ion-card class="manga-card">
+      <img [src]="manga.imagen" alt="Manga">
+      <ion-card-content>
+        <ion-card-title>{{ manga.titulo }}</ion-card-title>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
+<ion-card-title>Porque leíste Haikyuu</ion-card-title>
+<ion-slides [options]="slideOpts">
+  <ion-slide *ngFor="let manga of similaresAHaikyuu">
+    <ion-card>
+      <img [src]="manga.imagen" alt="Manga">
+      <ion-card-header>
+        <ion-card-title>{{ manga.titulo }}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
 
 
 
@@ -31,11 +52,9 @@
   <ion-icon slot="icon-only" name="heart"></ion-icon>
 </ion-button>
 
-  
 
-<app-menu></app-menu>
 </ion-content>
 <ion-footer>
-  
+  <app-menu></app-menu>
 </ion-footer>
 

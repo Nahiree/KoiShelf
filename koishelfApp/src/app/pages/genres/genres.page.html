@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Géneros preferidos</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+            <ion-list-header>
+          <ion-label>Géneros elegidos</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-checkbox class="ion-padding" slot="start"></ion-checkbox>
+          <ion-label>Komodo</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox class="ion-padding" slot="start"></ion-checkbox>
+          <ion-label>Shonen</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox class="ion-padding" slot="start"></ion-checkbox>
+          <ion-label>Shojo</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox class="ion-padding" slot="start"></ion-checkbox>
+          <ion-label>Seinen</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox class="ion-padding" slot="start"></ion-checkbox>
+          <ion-label>Josei</ion-label>
+        </ion-item>
+      </ion-list>
+      <div class="ion-text-center">
+        <ion-button fill="solid" class="boton-personalizado">Guardar</ion-button>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>

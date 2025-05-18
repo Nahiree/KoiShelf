@@ -1,8 +1,69 @@
-ion-toolbar{
+ion-content{
   --background: #151F25 !important;
-    color: #E0DCC5 !important;
+  color: #E0DCC5 !important;
 }
-ion-content {
-  --background: #151F25;
-  color: #E0DCC5;
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
+
+.searchbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+ion-searchbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+  border: solid #f44336 2px;
+  border-radius: 8px;
+  width: 96%;
+  box-shadow: none;
+}
+ion-header{
+  box-shadow: none;
+  ion-title{
+    font-family: 'Atkinson-Bold', sans-serif !important;
+    font-size: 1.8em;
+  }
+  ion-icon{
+    font-size: 25px;
+    color: #E0DCC5;
+  }
+}
+.horizontal-swiper {
+  height: 220px; // altura total del carrusel
+
+  ion-slide {
+    width: 140px !important; // ancho fijo de cada slide
+    display: flex;
+    justify-content: center;
+  }
+
+  .manga-card {
+    width: 120px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    ion-card-title {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    ion-card-content {
+      padding: 6px;
+    }
+  }
 }

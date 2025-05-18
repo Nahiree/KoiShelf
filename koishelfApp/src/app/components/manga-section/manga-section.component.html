@@ -1,14 +1,2 @@
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>{{ title }}</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-scroll scrollX="true">
-      <ion-card *ngFor="let manga of mangas" class="manga-card">
-        <img [src]="manga.coverUrl" [alt]="manga.title" />
-        <ion-card-title>{{ manga.title }}</ion-card-title>
-      </ion-card>
-    </ion-scroll>
-  </ion-card-content>
-</ion-card>
+
 
