@@ -1,6 +1,7 @@
 ion-content{
   --background: #151F25 !important;
   color: #E0DCC5 !important;
+
 }
 ion-toolbar {
   --background: #151F25 !important;
@@ -20,6 +21,8 @@ ion-searchbar {
   border-radius: 8px;
   width: 96%;
   box-shadow: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 ion-header{
   box-shadow: none;
@@ -32,38 +35,61 @@ ion-header{
     color: #E0DCC5;
   }
 }
-.horizontal-swiper {
-  height: 220px; // altura total del carrusel
+ion-card-title{
+    color: #E0DCC5;
+    font-family: 'Atkinson-Bold', sans-serif !important;
+    font-size: 1.2em;
+    margin: 0;
+    margin-top: 5px;
+ 
+    display: inline-block !important;
+  width: auto !important;
+  max-width: 70%;
+}
+app-news{
+  margin-top:  10px;
+  margin-bottom:  10px;
+}
+app-manga-section{
+  
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px !important;
+
+}
 
   ion-slide {
-    width: 140px !important; // ancho fijo de cada slide
+    
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
-
-  .manga-card {
-    width: 120px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    ion-card-title {
-      font-size: 14px;
-      text-align: center;
-      margin-top: 4px;
-    }
-
-    ion-card-content {
-      padding: 6px;
-    }
+.si {
+  display: flex;
+  flex-direction: row;
+  align-items: center; // alinea verticalmente
+  justify-content: space-between; // separa título y link
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+  a {
+    color: #E0DCC5 !important;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0;
   }
+ion-content::part(scroll) {
+  padding-bottom: 200px; // Asegura espacio suficiente para ver el final
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; // o lo que mida tu barra
+  z-index: 1000;
+  background-color: #151F25;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
