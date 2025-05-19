@@ -70,6 +70,18 @@ const routes: Routes = [
   },  {
     path: 'search',
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'section',
+    loadChildren: () => import('./pages/section/section.module').then( m => m.SectionPageModule)
+  },
+  {
+    path: 'library',
+    loadChildren: () => import('./pages/library/library.module').then( m => m.LibraryPageModule)
+  },
+  {
+    path: 'view',
+    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
   }
 
 ];
