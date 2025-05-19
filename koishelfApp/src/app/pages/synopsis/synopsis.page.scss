@@ -1,0 +1,36 @@
+ion-content {
+ --background: var(--ion-color-primary);
+--color: var(--ion-color-tertiary);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.author {
+  font-size: 18px;
+  --color: var(--ion-color-tertiary);
+  margin-bottom: 10px;
+}
+
+.description {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--ion-color-tertiary);
+  margin-top: 20px;
+}
+
+.banner{
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+

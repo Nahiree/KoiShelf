@@ -1,0 +1,76 @@
+ion-content {
+--background: var(--ion-color-primary);
+--color: var(--ion-color-tertiary);
+}
+
+ion-chip.tag {
+  --color: var(--ion-color-primary);
+  --background: var(--ion-color-warning);
+}
+
+ion-button.button {
+  --color: var(--ion-color-tertiary);
+  --background: var(--ion-color-secondary);
+
+}
+
+ion-item{
+--background: var(--ion-color-primary);
+--color: var(--ion-color-tertiary);
+}
+
+.manga-card {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 1rem;
+
+  .cover {
+    width: 130px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+
+  .info {
+    flex: 1;
+    h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    p {
+      margin: 4px 0 10px;
+    }
+    .tags {
+      margin-top: 12px;
+      padding: 12px;
+    }
+  }
+}
+
+.chapter-list {
+  margin-top: 1rem;
+
+  ion-item {
+    border-bottom: 1px solid #e0e0e0;
+
+    ion-label h2 {
+      font-weight: bold;
+    }
+
+    ion-label p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    ion-button {
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    ion-avatar img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+

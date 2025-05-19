@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>synopsis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <img alt="banner" src="assets/banner/haikyuub.jpg" class="banner"/>
+
+  <h1 class="title">{{ mangasypnosis.title }}</h1>
+  <h2 class="author">De {{ mangasypnosis.author }}</h2>
+
+  <p class="description">{{ mangasypnosis.synopsis }}</p>
+
+  <h2 class="subtitle">Sobre {{ mangasypnosis.author }}</h2>
+  <p class="description">{{ mangasypnosis.biography }}</p>
+
+  <h2 class="subtitle">Otros trabajos de {{ mangasypnosis.author }}</h2>
+</ion-content>

@@ -63,7 +63,21 @@ const routes: Routes = [
   {
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
-  }
+  },
+{
+  path: 'synopsis',
+  loadChildren: () => import('./pages/synopsis/synopsis.module').then( m => m.SynopsisPageModule)
+},
+  {
+    path: 'manga-detail',
+    loadChildren: () => import('./pages/manga-detail/manga-detail.module').then( m => m.MangaDetailPageModule)
+  },
+  {
+    path: 'manga-purchase-info',
+    loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then( m => m.MangaPurchaseInfoPageModule)
+  }
+
+
 ];
 
 @NgModule({
