@@ -13,7 +13,7 @@ ion-content.login-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
-  }
+}
   
   .login-content {
     display: flex; 
@@ -43,7 +43,7 @@ ion-content.login-content {
         margin-top: 15px;
         
         --background: transparent;
-        --highlight-color-focused: #f44336;
+        --highlight-color-focused: transparent;
         color: #E0DCC5;
         align-self: center;
         
@@ -51,7 +51,15 @@ ion-content.login-content {
   
       ion-input {
         color: #E0DCC5;
-        
+        --background: var(--ion-color-primary);
+        --border-color: transparent;
+        --box-shadow: none;
+      }
+
+      ion-input:focus-within {
+        --background: var(--ion-color-primary);
+        --color: #E0DCC5;
+        --highlight-color-focused: #E0DCC5;; /* línea inferior al enfocar */
       }
     .line{
         height: 0.5px;

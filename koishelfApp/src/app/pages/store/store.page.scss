@@ -1,0 +1,101 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-tertiary);
+  height: 56px;
+  padding: 16px 20px;
+}
+
+ion-content{
+    --background: var(--ion-color-primary);
+}
+
+ion-searchbar {
+    --background: var(--ion-color-primary);
+    --placeholder-color: var(--ion-color-tertiary); /* Color del placeholder */
+    --icon-color: var(--ion-color-tertiary);
+    --border-radius: 4px;
+    --box-shadow: 0 0 0 1px var(--ion-color-secondary)
+}
+
+
+.extra-small{
+    font-size: 12px;
+    color: var(--ion-color-secondary)
+}
+
+ion-row{
+    padding-right: 10px;
+}
+
+ion-col{
+    padding: 0px;
+    border: 0px;
+}
+
+ion-card {
+    width: 125px;
+    height: 192px;
+    --background: var(--ion-color-primary);
+    padding: 0px;
+}
+
+ion-card img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+ion-card-content {
+    padding: 2px 5px;
+    gap: 4px;
+}
+ion-card-subtitle{
+    height: 23px;
+}
+
+ion-card-subtitle p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+app-rating {
+    width: 50px;
+    height: 12.2px;
+}
+
+ion-accordion-group{
+    --background: var(--ion-color-primary);
+}
+
+
+ion-checkbox {
+  --checkbox-background: var(--ion-color-primary);       /* color del fondo cuando NO está marcado */
+  --checkbox-background-checked: var(--ion-color-secondary); /* color del fondo cuando SÍ está marcado */
+  --checkmark-color: var(--ion-color-primary);           /* color de la palomita/marca */
+  --border-color: var(--ion-color-secondary) ;               /* color del borde del checkbox */
+  --border-color-checked: var(--ion-color-secondary); 
+   color: var(--ion-color-light);       /* borde cuando está marcado */
+    padding: 5px;
+}
+
+ion-accordion {
+  background-color: var(--ion-color-primary); /* Fondo del área expandida */
+}
+
+ion-icon {
+    color: var(--ion-color-light);
+}
+
+ion-item {
+  --background: var(--ion-color-primary); /* Fondo oscuro */
+  border: none;
+  border-bottom: 2px solid var(--ion-color-tertiary); /* Línea inferior */
+  color: var(--ion-color-tertiary);
+}
+
+
+

@@ -1,89 +1,88 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
+  {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'store',
-    loadChildren: () => import('./pages/store/store.module').then( m => m.StorePageModule)
+    loadChildren: () => import('./pages/store/store.module').then(m => m.StorePageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'password',
-    loadChildren: () => import('./pages/password/password.module').then( m => m.PasswordPageModule)
+    loadChildren: () => import('./pages/password/password.module').then(m => m.PasswordPageModule)
   },
   {
     path: 'start',
-    loadChildren: () => import('./pages/start/start.module').then( m => m.StartPageModule)
+    loadChildren: () => import('./pages/start/start.module').then(m => m.StartPageModule)
   },
   {
     path: 'splash',
-    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+    loadChildren: () => import('./pages/splash/splash.module').then(m => m.SplashPageModule)
   },
-
   {
-    path: 'profile', // Nueva ruta para el perfil
-    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule) // Ajusta la ruta a donde esté tu módulo
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
   },
   {
     path: 'edit-profile',
-    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then(m => m.EditProfilePageModule)
   },
   {
     path: 'premium',
-    loadChildren: () => import('./pages/premium/premium.module').then( m => m.PremiumPageModule)
+    loadChildren: () => import('./pages/premium/premium.module').then(m => m.PremiumPageModule)
   },
   {
     path: 'preferences',
-    loadChildren: () => import('./pages/preferences/preferences.module').then( m => m.PreferencesPageModule)
+    loadChildren: () => import('./pages/preferences/preferences.module').then(m => m.PreferencesPageModule)
   },
   {
     path: 'genres',
-    loadChildren: () => import('./pages/genres/genres.module').then( m => m.GenresPageModule)
+    loadChildren: () => import('./pages/genres/genres.module').then(m => m.GenresPageModule)
   },
   {
     path: 'notifications',
-    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+    loadChildren: () => import('./pages/notifications/notifications.module').then(m => m.NotificationsPageModule)
   },
   {
     path: 'news',
-    loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
-  },
-{
-  path: 'synopsis',
-  loadChildren: () => import('./pages/synopsis/synopsis.module').then( m => m.SynopsisPageModule)
-},
+    loadChildren: () => import('./pages/news/news.module').then(m => m.NewsPageModule)
+  },
+  {
+    path: 'forum',
+    loadChildren: () => import('./pages/forum/forum.module').then(m => m.ForumPageModule)
+  },
+  {
+    path: 'synopsis',
+    loadChildren: () => import('./pages/synopsis/synopsis.module').then(m => m.SynopsisPageModule)
+  },
   {
     path: 'manga-detail',
-    loadChildren: () => import('./pages/manga-detail/manga-detail.module').then( m => m.MangaDetailPageModule)
+    loadChildren: () => import('./pages/manga-detail/manga-detail.module').then(m => m.MangaDetailPageModule)
   },
   {
     path: 'manga-purchase-info',
-    loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then( m => m.MangaPurchaseInfoPageModule)
+    loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then(m => m.MangaPurchaseInfoPageModule)
   }
-
-
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -5,8 +5,7 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()">
 
       <ion-item lines="inset">
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input formControlName="name" type="text"></ion-input>
+        <ion-input formControlName="name" labelPlacement="floating" label="Nombre " type="text" fill="solid" mode="md"></ion-input>
       </ion-item>
       <ion-text *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid">
         <small *ngIf="registerForm.get('name')?.errors?.['required']">*El nombre es obligatorio.</small>
@@ -14,16 +13,14 @@
       </ion-text>
       <div class="line"></div>
       <ion-item lines="inset">
-        <ion-label position="floating">Apellido</ion-label>
-        <ion-input formControlName="lastName" type="text"></ion-input>
+        <ion-input formControlName="lastName" labelPlacement="floating" label="Apellido " type="text" fill="solid" mode="md"></ion-input>
       </ion-item>
       <ion-text *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid">
         <small *ngIf="registerForm.get('lastName')?.errors?.['required']">*El apellido es obligatorio.</small>
       </ion-text>
       <div class="line"></div>
       <ion-item lines="inset">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email" type="email"></ion-input>
+        <ion-input formControlName="email" labelPlacement="floating"  label="Email " type="email" fill="solid" mode="md"></ion-input>
       </ion-item>
       <ion-text *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
         <small *ngIf="registerForm.get('email')?.errors?.['required']">*El email es obligatorio.</small>
@@ -31,16 +28,16 @@
       </ion-text>
       <div class="line"></div>
       <ion-item lines="inset">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input formControlName="password" type="password"></ion-input>
+        <ion-input formControlName="password" label="Contraseña " type="password" fill="solid"
+        mode="md"></ion-input>
       </ion-item>
       <ion-text *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
         <small>*La contraseña es obligatoria.</small>
       </ion-text>
       <div class="line"></div>
       <ion-item lines="inset">
-        <ion-label position="floating">Confirmar contraseña</ion-label>
-        <ion-input formControlName="password2" type="password"></ion-input>
+        <ion-input formControlName="password2" label="Confirmar contraseña " type="password" fill="solid"
+        mode="md"></ion-input>
       </ion-item>
       <ion-text *ngIf="registerForm.get('password2')?.touched && registerForm.get('password2')?.invalid">
         <small>*Debe confirmar la contraseña.</small>
@@ -59,5 +56,3 @@
     </p>
   </div>
 </ion-content>
-
-

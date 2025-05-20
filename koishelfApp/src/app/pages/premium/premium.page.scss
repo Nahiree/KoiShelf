@@ -38,3 +38,19 @@ ion-row {
   --background: var(--ion-color-secondary); /* o cualquier color de fondo */
   --color: var(--ion-color-tertiary);         /* ¡Este es el color del texto! */
 }
+
+ion-card-title {
+  font-family: "Atkinson-Bold", sans-serif !important;
+}
+
+h6 {
+  font-weight: 500;
+}
+
+ul {
+  text-align: left;
+}
+
+li {
+  list-style: none;
+}

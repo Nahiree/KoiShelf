@@ -1,35 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { DatabaseService } from 'src/app/services/database.service';
+
+interface Book {
+  name: string;
+  author: string
+}
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: false,
-})
-export class LoginPage implements OnInit {
-  loginForm!: FormGroup;
+}) export class LoginPage {
 
+  form: FormGroup;
+  // La función constructor se ejecuta al crear la clase
   constructor(
-    private formBuilder: FormBuilder,
-    private authService: AuthService
+    public db: DatabaseService,
+    public auth: AuthService,
+    public formBuilder: FormBuilder
   ) {
-    this.loginForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-    });
+      password: ['', [Validators.required, Validators.minLength(4)]],
+    })
   }
 
-  ngOnInit(): void {}
-
-  login(): void {
-    if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-      this.authService.loginUser(email, password);
-    } else {
-      this.loginForm.markAllAsTouched();
-      console.warn('Formulario inválido');
+  // La función ngOnInit se ejecuta al inicializar la clase
+  login() {
+    if(this.form.valid){
+      console.log('formulario valido', this.form.valid);
+      console.log('valores del formulario', this.form.value);
+      this.auth.loginUser(this.form.value.email, this.form.value.password)
+    }
+    else{
+      this.form.markAllAsTouched();
     }
   }
 }
