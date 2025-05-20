@@ -8,7 +8,7 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col>
+      <ion-col size="4">
         <img [src]="manga.image" class="cover" alt="Portada del manga" />
       </ion-col>
 
@@ -19,11 +19,7 @@
         <h2 class="price">US$ {{ manga.price }}</h2>
 
         <div class="buttons">
-           <div class="actions">
-            <ion-button fill="outline" class="button-comprar" [routerLink]="['/synopsis']">
-              Comprar
-            </ion-button>
-            </div>
+          <ion-button color="success">Comprar</ion-button>
           <ion-button fill="clear">
             <ion-icon name="cart-outline"></ion-icon>
           </ion-button>
@@ -34,49 +30,39 @@
 
   <h3>Sinopsis</h3>
   <p>{{ manga.synopsis }}</p>
-   <div class="actions">
-        <ion-button fill="solid" class="button-sinopsis" [routerLink]="['/synopsis']">
-          Leer sinopsis
-        </ion-button>
-    </div>
+  <ion-button color="danger" size="small">Leer más</ion-button>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title class="info-compra">Info de producto</ion-card-title>
+      <ion-card-title>Info de producto</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label class="title-info">Título</ion-label>
+          <ion-label>Título</ion-label>
           <ion-note slot="end">{{ manga.title }}</ion-note>
         </ion-item>
-
         <ion-item>
-          <ion-label class="title-info">Número de páginas</ion-label>
+          <ion-label>Número de páginas</ion-label>
           <ion-note slot="end">{{ manga.pages }}</ion-note>
         </ion-item>
-
         <ion-item>
-          <ion-label class="title-info">Idioma</ion-label>
+          <ion-label>Idioma</ion-label>
           <ion-note slot="end">{{ manga.language }}</ion-note>
         </ion-item>
-
         <ion-item>
-          <ion-label class="title-info">Editorial</ion-label>
+          <ion-label>Editorial</ion-label>
           <ion-note slot="end">{{ manga.publisher }}</ion-note>
         </ion-item>
-
         <ion-item>
-          <ion-label class="title-info">No. de tomo</ion-label>
+          <ion-label>No. de tomo</ion-label>
           <ion-note slot="end">{{ manga.volume }}</ion-note>
         </ion-item>
-
         <ion-item>
-          <ion-label class="title-info">Formato</ion-label>
+          <ion-label>Formato</ion-label>
           <ion-note slot="end">{{ manga.format }}</ion-note>
         </ion-item>
       </ion-list>
-
     </ion-card-content>
   </ion-card>
 
@@ -88,7 +74,7 @@
   <h3>Opiniones destacadas</h3>
   <ion-card>
     <ion-card-header>
-      <ion-label class="title-info"><strong>AKAASHI'S DETONATOR 5000</strong></ion-label>
+      <ion-label><strong>AKAASHI'S DETONATOR 5000</strong></ion-label>
        <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
     </ion-card-header>
     <ion-card-content>
