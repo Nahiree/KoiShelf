@@ -43,13 +43,17 @@ ion-content {
   }
   
   ion-input {
-    color: #E0DCC5 !important;
+    color: #E0DCC5;
+    --background: #151F25 !important;
+    --border-color: transparent;
+    --box-shadow: none;
   }
   
-  ion-input::part(native) {
-    color: #E0DCC5 !important;
-    background-color: transparent !important;
-  }
+  ion-input:focus-within {
+        --background: #151F25 !important;
+        --color: #E0DCC5;
+        --highlight-color-focused: #E0DCC5;; /* línea inferior al enfocar */
+      }
   
   .register-button {
     align-self: center;
@@ -86,6 +90,7 @@ ion-content {
     width: 95%;
     background-color: #E0DCC5 ;
     align-self: center;
+    margin: 1px 0;
 }
 small{
    color: #DB3F3A !important;

@@ -1,40 +1,32 @@
+
 <ion-content [fullscreen]="true" class="login-content">
   <div class="login-card">
     <h1>Login</h1>
-
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <ion-item lines="inset">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" formControlName="email"></ion-input>
-      </ion-item>
-      <ion-text *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
-        <small *ngIf="loginForm.get('email')?.errors?.['required']">*El email es obligatorio.</small>
-        <small *ngIf="loginForm.get('email')?.errors?.['email']">*Formato de email inválido.</small>
-      </ion-text>
-
-      <div class="line"></div>
-
-      <ion-item lines="inset">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
-      </ion-item>
-      <ion-text *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
-        <small>*La contraseña es obligatoria.</small>
-      </ion-text>
-
-      <div class="line"></div>
-
-      <div class="forgot-password">
-        <a routerLink="/password" class="forgot-password">¿Olvidaste tu contraseña?</a>
-        
-      </div>
-
-      <ion-button routerLink="../home" class="custom-button" type="submit">Ingresar</ion-button>
-    </form>
-
-    <div class="register-link">
-      ¿No tienes una cuenta? 
-      <a routerLink="/register">Ingresa aquí.</a>
-    </div>
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <ion-item lines="none">
+            <ion-input formControlName="email" labelPlacement="floating"  label="Email" type="email" fill="solid" mode="md"></ion-input>
+          </ion-item>
+          <ion-text *ngIf="form.get('email')?.touched && form.get('email')?.valid === false">
+              <p *ngIf="form.get('email')?.errors?.['required']">El Email es requerido</p>
+              <p *ngIf="form.get('email')?.valid===false">Email invalido</p>
+            </ion-text>
+           <div class="line"></div>
+           <ion-item lines="inset">
+            <ion-input formControlName="password" label="Contraseña " type="password" fill="solid" labelPlacement="floating"
+              mode="md"></ion-input>
+           </ion-item>
+           <ion-text *ngIf="form.get('password')?.touched && form.get('password')?.valid === false">
+              <p *ngIf="form.get('password')?.errors?.['required']">El Password es requerido</p>
+            </ion-text>
+           <div class="line"></div>
+           <div class="forgot-password">
+            <a routerLink="/password" class="forgot-password">¿Olvidaste tu contraseña?</a>
+          </div>
+          <ion-button type="submit" class="custom-button">Ingresar</ion-button>
+        </form>
+        <div class="register-link">
+            ¿No tienes una cuenta? 
+            <a routerLink="/register">Ingresa aquí.</a>
+          </div>
   </div>
 </ion-content>

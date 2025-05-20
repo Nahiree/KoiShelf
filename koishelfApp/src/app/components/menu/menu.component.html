@@ -1,6 +1,4 @@
-
-  <!-- Tab bar -->
-  <ion-tab-bar slot="bottom">
+ <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home"
     [routerLink]="['/home']"
     [ngClass]="{ 'active': selectedTab === 'home' }" 
@@ -37,8 +35,16 @@
       />
       <ion-label>Perfil</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <img src="assets/icon/foro.svg" alt="foro">
+    <ion-tab-button tab="profile"
+    [routerLink]="['/forum']"
+    [ngClass]="{ 'active': selectedTab === 'forum' }" 
+      (click)="selectTab('forum')"
+    >
+      <img 
+        [src]="selectedTab === 'profile' ? 'assets/icon/foro2.svg' : 'assets/icon/foro.svg'" 
+        alt="home icon" 
+        class="tab-icon"
+      />
       <ion-label>Foro</ion-label>
     </ion-tab-button>
     <ion-tab-button tab="settings">
@@ -46,4 +52,3 @@
       <ion-label>Biblioteca</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-
