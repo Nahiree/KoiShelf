@@ -63,7 +63,11 @@ const routes: Routes = [
   {
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
-  }
+  },  {
+    path: 'forum',
+    loadChildren: () => import('./pages/forum/forum.module').then( m => m.ForumPageModule)
+  }
+
 ];
 
 @NgModule({

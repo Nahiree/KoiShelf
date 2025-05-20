@@ -1,24 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>store</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon aria-hidden="true" name="bag" slot="start"></ion-icon>
+    </ion-buttons>
+    <ion-title><h3>Tienda</h3> </ion-title>
+    <ion-icon aria-hidden="true" name="bookmarks" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <a href="google.com" style="color: white;">Ir a google</a>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">store</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-button>Prueba botón</ion-button> 
-  <app-buttonlinear label = "buenasnoches" 
-  color="purple">
-  </app-buttonlinear>
-  <app-card-with-title></app-card-with-title>
-  <app-card-with-progress></app-card-with-progress>
-  <app-card-store></app-card-store>
-  <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="prueba">
+          <ion-searchbar placeholder="Busca tus títulos favoritos"></ion-searchbar>
+        </div>
+         <ion-accordion-group>
+          <ion-accordion value="first">
+            <ion-item slot="header">
+              <ion-label>
+                <h6>Filtrar</h6>
+              </ion-label>
+            </ion-item>
+            <ion-checkbox class="ion-padding" slot="content"><p>Género</p></ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content"><p>Autor</p></ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content"><p>Demografía</p></ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content"><p>Editorial</p></ion-checkbox>
+          </ion-accordion>
+        </ion-accordion-group>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4" *ngFor="let manga of mangas">
+          <ion-card>
+            <img alt="manga-cover" src= "{{ manga.banner}}"/>
+            <ion-card-content>
+              <ion-card-subtitle><p>{{ manga.id}}</p></ion-card-subtitle>
+              <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+              <ion-card-subtitle class="extra-small">US$ {{ manga.price}}</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
 </ion-content>
 
 <ion-footer>
