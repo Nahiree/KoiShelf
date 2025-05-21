@@ -96,6 +96,14 @@ const routes: Routes = [
   {
     path: 'manga-purchase-info',
     loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then( m => m.MangaPurchaseInfoPageModule)
+  },
+  {
+    path: 'mangateca',
+    loadChildren: () => import('./pages/mangateca/mangateca.module').then( m => m.MangatecaPageModule)
+  },
+  {
+    path: 'mangateca-edicion',
+    loadChildren: () => import('./pages/mangateca-edicion/mangateca-edicion.module').then( m => m.MangatecaEdicionPageModule)
   }
 
 

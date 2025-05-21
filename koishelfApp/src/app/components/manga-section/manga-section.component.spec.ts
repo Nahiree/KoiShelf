@@ -11,7 +11,7 @@ describe('MangaSectionComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ MangaSectionComponent ],
       imports: [IonicModule],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]  // Agregar CUSTOM_ELEMENTS_SCHEMA aquí
+      schemas: [CUSTOM_ELEMENTS_SCHEMA] 
     }).compileComponents();
 
     fixture = TestBed.createComponent(MangaSectionComponent);

@@ -15,16 +15,16 @@ import { DatabaseService } from 'src/app/services/database.service';
 export class MangaSectionComponent implements OnInit {
   @Input() ids: string[] = [];
 
-  mangas:any; //declara el nombre y el tipo de variable, en este caso any por que no sabemos lo que recibiremos.
+  mangas:any;
 
   constructor(
-    public db: DatabaseService //Pedir acceso a la base de datos.
+    public db: DatabaseService
   ) { 
-    this.fetchMangas(); //Llamar a la función, utilizamos this. para llamar algo de la misma función
+    this.fetchMangas();
   }
 
   ngOnInit() {
-    this.fetchMangas(); //Llamar a la función, utilizamos this. para llamar algo de la misma función
+    this.fetchMangas();
   }
 
   mostrarMensaje() {
@@ -36,7 +36,6 @@ export class MangaSectionComponent implements OnInit {
   this.db.fetchFirestoreCollection('manga')
     .subscribe((res: any[]) => {
       console.log('Mangas Collection: ', res);
-      // Filtra solo los que están en this.ids
       this.mangas = res.filter(manga => this.ids.includes(manga.id));
     });
   }
