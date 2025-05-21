@@ -1,0 +1,126 @@
+ion-content{
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+
+}
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
+ion-header{
+  box-shadow: none;
+  ion-title{
+    font-family: 'Atkinson-Bold', sans-serif !important;
+    font-size: 1.8em;
+  }
+  ion-icon{
+    font-size: 30px;
+    color: #E0DCC5;
+    padding: 5px;
+    padding-left: 10px;
+  }
+}
+.searchbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+ion-searchbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+  border: solid #f44336 2px;
+  border-radius: 8px;
+  width: 96%;
+  box-shadow: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.custom-segment {
+  --background: #151F25 !important;
+  justify-content: space-around;
+  padding: 0 10px;
+
+  ion-segment-button {
+    color:  #E0DCC5 !important;
+   
+    --indicator-color: transparent;
+    position: relative;
+    flex: 1;
+    justify-content: center;
+
+    ion-label {
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    &.segment-button-checked::after {
+      background-color: #f44336 ; // color de subrayado
+    }
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0px;
+}
+
+.manga-card {
+  background-color: #151F25 !important;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+  height: 190px;
+  margin: 5px;
+  margin-bottom: 5px;
+  padding-bottom: -10px;
+  
+  
+
+  img {
+    width: 100%;
+    height: 70%;
+    margin-top: 5px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  ion-card-content {
+ 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -10px;
+
+    ion-card-subtitle {
+      font-size: 14px;
+      margin-top: -5px;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .progress-bar {
+      height: 4px;
+      width: 90%;
+      background-color: #f44336 ;
+      border-radius: 4px;
+      
+    }
+  }
+}
+

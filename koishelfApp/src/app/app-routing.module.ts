@@ -36,6 +36,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/splash/splash.module').then(m => m.SplashPageModule)
   },
   {
+    path: 'buscador',
+    loadChildren: () => import('./pages/buscador/buscador.module').then( m => m.BuscadorPageModule)
+  },
+  {
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
   },
@@ -67,7 +71,24 @@ const routes: Routes = [
     path: 'forum',
     loadChildren: () => import('./pages/forum/forum.module').then(m => m.ForumPageModule)
   },
+    {
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },
   {
+    path: 'section',
+    loadChildren: () => import('./pages/section/section.module').then( m => m.SectionPageModule)
+  },
+  {
+    path: 'library',
+    loadChildren: () => import('./pages/library/library.module').then( m => m.LibraryPageModule)
+  },
+  {
+    path: 'view',
+    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
+  },
+
+{
     path: 'synopsis',
     loadChildren: () => import('./pages/synopsis/synopsis.module').then(m => m.SynopsisPageModule)
   },
@@ -78,7 +99,16 @@ const routes: Routes = [
   {
     path: 'manga-purchase-info',
     loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then(m => m.MangaPurchaseInfoPageModule)
-  },  {
+  },
+  {
+    path: 'mangateca',
+    loadChildren: () => import('./pages/mangateca/mangateca.module').then( m => m.MangatecaPageModule)
+  },
+  {
+    path: 'mangateca-edicion',
+    loadChildren: () => import('./pages/mangateca-edicion/mangateca-edicion.module').then( m => m.MangatecaEdicionPageModule)
+  },
+  {
     path: 'purchase',
     loadChildren: () => import('./pages/purchase/purchase.module').then( m => m.PurchasePageModule)
   }

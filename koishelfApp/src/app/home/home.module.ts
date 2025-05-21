@@ -6,6 +6,9 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { NewsComponent } from '../components/news/news.component';
+import { MangaSectionComponent } from '../components/manga-section/manga-section.component';
+
 
 
 
@@ -15,10 +18,13 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     FormsModule,
     IonicModule,
     SharedModule,
-    HomePageRoutingModule
+    NewsComponent,
+    HomePageRoutingModule,
+    MangaSectionComponent
   ],
   declarations: [HomePage],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [MangaSectionComponent]
 })
 export class HomePageModule {
   
