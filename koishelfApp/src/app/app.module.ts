@@ -11,6 +11,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { SharedModule } from './modules/shared/shared.module';
+import { MangaSectionComponent } from './components/manga-section/manga-section.component';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,9 +21,11 @@ import { SharedModule } from './modules/shared/shared.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    MangaSectionComponent,
     AngularFirestoreModule,
     HttpClientModule, 
-    SharedModule  
+    SharedModule,
+    
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -30,6 +34,7 @@ import { SharedModule } from './modules/shared/shared.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
 
 
 

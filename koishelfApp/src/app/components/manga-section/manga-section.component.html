@@ -1,0 +1,6 @@
+<ion-card *ngFor="let manga of mangas">
+  <img [src]="manga.cover" alt="{{ manga.id }}" />
+  <ion-card-content>
+    <ion-card-title class="ellipsis">{{ manga.id }}</ion-card-title>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,14 @@
+.icon-btn {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.share-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.icon-btn:active .share-icon {
+  transform: scale(1.1);
+}

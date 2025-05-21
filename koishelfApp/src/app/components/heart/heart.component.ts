@@ -4,16 +4,18 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-heart',
   templateUrl: './heart.component.html',
   styleUrls: ['./heart.component.scss'],
+  standalone: false
 })
 export class HeartComponent implements OnInit {
-  filled = false;
-
-  toggle() {
-    this.filled = !this.filled;
-  }
 
   constructor() { }
 
   ngOnInit() {}
 
+  filled = false;
+
+  toggle() {
+    this.filled = !this.filled;
+    console.log('Filled ahora:', this.filled);
+  }
 }

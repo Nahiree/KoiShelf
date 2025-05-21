@@ -1,11 +1,14 @@
 .icon-btn {
-  background: none;
-  border: none;
   cursor: pointer;
-  padding: 8px;
+  display: inline-block;
 }
-img {
-  width: 24px;
-  height: 24px;
-  transition: 0.3s ease;
+
+.heart-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.icon-btn:active .heart-icon {
+  transform: scale(1.1);
 }

@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>manga-detail</ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Detalles de manga</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,17 +12,22 @@
     <img src="assets/manga-cover/fma.jpg" alt="Cover" class="cover" />
 
     <div class="info">
-      <h2>{{ manga.title }}</h2>
-     <app-rating [rating]="manga.rating"></app-rating>
+      <h3>{{ manga.title }}</h3>
+     <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
 
-      <p>{{ manga.author }}</p>
+      <h6 class="author">{{ manga.author }}</h6>
+     <div class="icon-group">
+        <app-heart></app-heart>
+        <app-share-icon></app-share-icon>
+        <app-save></app-save>
+      </div>
+
 
       <div class="actions">
-      </div>
-       <ion-button class="button" 
-        [routerLink]="['/synopsis']">
+        <ion-button class="button" [routerLink]="['/synopsis']">
           Leer sinopsis
         </ion-button>
+      </div>
     </div>
   </div>
 
@@ -39,7 +47,7 @@
     </ion-avatar>
 
     <ion-label>
-      <h2>CAPÍTULO {{ chapter.number }}</h2>
+      <h6>CAPÍTULO {{ chapter.number }}</h6>
       <p>{{ chapter.title }}</p>
     </ion-label>
 

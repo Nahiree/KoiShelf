@@ -1,0 +1,14 @@
+.icon-btn {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.save-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.icon-btn:active .save-icon {
+  transform: scale(1.1);
+}

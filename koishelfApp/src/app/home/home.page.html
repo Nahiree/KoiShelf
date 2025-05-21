@@ -1,36 +1,98 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>KoiShelf</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+  <ion-toolbar>
+  <div class="searchbar-wrapper">
+    <ion-searchbar routerLink="/search" (ionFocus)="goToSearch()"></ion-searchbar>
+
+  </div>
+</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" color="secondary">
-    <ion-toolbar>
-      <ion-title size="large">Casita</ion-title>
-      <ion-icon name="notifications"></ion-icon>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-
-  <ion-button>Default</ion-button>
-<ion-button shape="round">Round</ion-button>
-<ion-button>
-  <ion-icon slot="icon-only" name="heart"></ion-icon>
-</ion-button>
-<ion-button shape="round" color="secondary" [routerLink]="['/login']">
-  <ion-icon slot="icon-only" name="heart"></ion-icon>
   
-</ion-button>
-<app-menu></app-menu>
+
+<app-news></app-news>
+
+
+<div class="si">
+  <ion-card-title>Nuevos Lanzamientos</ion-card-title>
+  <a routerLink="/register">Más</a>
+</div>
+
+  <ion-slides class="horizontal-swiper">
+  <ion-slide>
+    <app-manga-section [ids]="['Haikyuu!!', 'Jujutsu Kaisen', 'Fullmetal Alchemist', 'El chico del que estaba enamorada no era un chico']"></app-manga-section>
+  </ion-slide>
+  </ion-slides>
+
+  <div class="si">
+  <ion-card-title>Porque viste Haikyuu!!</ion-card-title>
+  <a routerLink="/register">Más</a>
+</div>
+
+  <ion-slides  class="horizontal-swiper">
+  <ion-slide>
+    <app-manga-section [ids]="['Chihayafuru', 'Slam Dunk', 'Junjo Romantica', 'Banana Fish']"></app-manga-section>
+  </ion-slide>
+  </ion-slides>
+
+   <div class="si">
+  <ion-card-title>Aclamadas por la crítica</ion-card-title>
+  <a routerLink="/register">Más</a>
+</div>
+
+  <ion-slides  class="horizontal-swiper">
+  <ion-slide>
+    <app-manga-section [ids]="['Chainsaw Man', 'Death Note', 'Houseki no Kuni', 'Kuroshitsuji']"></app-manga-section>
+  </ion-slide>
+  </ion-slides>
+
+  <div class="si">
+  <ion-card-title>Nuevos Lanzamientos</ion-card-title>
+  <a routerLink="/register">Más</a>
+</div>
+
+  <ion-slides  class="horizontal-swiper">
+  <ion-slide>
+    <app-manga-section [ids]="['Kimetsu no Yaiba', 'Kimi ni Todoke', 'Kowloon Generic Romance', 'Lovely Complex']"></app-manga-section>
+  </ion-slide>
+  </ion-slides>
+  <div class="si">
+  <ion-card-title>Porque viste Haikyuu!!</ion-card-title>
+  <a routerLink="/register">Más</a>
+</div>
+
+  <ion-slides  class="horizontal-swiper">
+  <ion-slide>
+    <app-manga-section [ids]="['Nana', 'Neon Genesis Evangelion', 'Orange', 'Naruto']"></app-manga-section>
+  </ion-slide>
+  </ion-slides>
+  
+ <div class="si">
+  <ion-card-title>Aclamadas por la crítica</ion-card-title>
+  <a routerLink="/register">Más</a>
+</div>
+
+  <ion-slides  class="horizontal-swiper">
+  <ion-slide>
+    <app-manga-section [ids]="['One Piece', 'Paradise Kiss', 'Pluto', 'Skip Beat!']"></app-manga-section>
+  </ion-slide>
+  </ion-slides>
+  
+
 </ion-content>
-<ion-footer>
+
+
+<div class="fixed-footer">
+  <app-menu></app-menu>
+</div>
   
-</ion-footer>
+
 

@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>synopsis</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">synopsis</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,12 +11,12 @@
   <img alt="banner" src="assets/banner/haikyuub.jpg" class="banner"/>
 
   <h1 class="title">{{ mangasypnosis.title }}</h1>
-  <h2 class="author">De {{ mangasypnosis.author }}</h2>
+  <h4 class="author">De {{ mangasypnosis.author }}</h4>
 
   <p class="description">{{ mangasypnosis.synopsis }}</p>
 
-  <h2 class="subtitle">Sobre {{ mangasypnosis.author }}</h2>
+  <h4 class="subtitle">Sobre {{ mangasypnosis.author }}</h4>
   <p class="description">{{ mangasypnosis.biography }}</p>
 
-  <h2 class="subtitle">Otros trabajos de {{ mangasypnosis.author }}</h2>
+  <h6 class="subtitle">Otros trabajos de {{ mangasypnosis.author }}</h6>
 </ion-content>

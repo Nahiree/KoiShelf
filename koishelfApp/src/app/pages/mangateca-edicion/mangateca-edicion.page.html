@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Haikyuu!!</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <div class="contenido-central">
+   
+  <div class="banner-portada">
+  <img [src]="portadaUrl" alt="Portada Manga" />
+  <div class="overlay"></div>
+  <div class="contenido-banner">
+    <h1>{{ titulo }}</h1>
+    <div class="subinfo">
+      <ion-icon name="book"></ion-icon>
+      <span>SERIE DE {{ tomos.length }} TOMOS</span>
+    </div>
+  </div>
+</div>
+  <ion-segment [(ngModel)]="segment" class="custom-segment">
+  <ion-segment-button value="info">INFO</ion-segment-button>
+    <ion-segment-button value="tengo">TENGO</ion-segment-button>
+    <ion-segment-button value="faltan">FALTAN</ion-segment-button>
+</ion-segment>
+  <!-- INFO -->
+  <div *ngIf="segment === 'info'">
+    <div class="progreso-item">
+      <ion-progress-bar [value]="getPorcentajeTengo()" ></ion-progress-bar>
+      <div class="progreso-texto">Tengo: {{ tomosTengo.length }}</div>
+    </div>
+    <div class="progreso-item">
+      <ion-progress-bar [value]="getPorcentajeFaltan()"></ion-progress-bar>
+      <div class="progreso-texto">Me faltan: {{ tomosFaltan.length }}</div>
+    </div>
+
+    <div class="info-edicion-box">
+  <h3 class="info-edicion-titulo">INFO DE EDICIÓN</h3>
+  <div class="info-item">
+    <span class="label">TÍTULO</span>
+    <span class="valor">{{ titulo }}</span>
+  </div>
+  <div class="info-item">
+    <span class="label">NÚMERO DE TOMOS</span>
+    <span class="valor">{{ tomos.length }}</span>
+  </div>
+  <div class="info-item">
+    <span class="label">IDIOMA</span>
+    <span class="valor">Inglés (Estados Unidos)</span>
+  </div>
+  <div class="info-item">
+    <span class="label">EDITORIAL</span>
+    <span class="valor">Viz Media</span>
+  </div>
+  <div class="info-item">
+    <span class="label">ESTADO</span>
+    <span class="valor">Terminada</span>
+  </div>
+  <div class="info-item">
+    <span class="label">FORMATO</span>
+    <span class="valor">Tamano Takoubon<br>con sobrecubierta</span>
+  </div>
+</div>
+<div class="otras-ediciones-box">
+  <h3 class="otras-ediciones-titulo">OTRAS EDICIONES</h3>
+
+  <div *ngFor="let edicion of otrasEdiciones" class="edicion-card">
+    <img [src]="edicion.portada" alt="Portada {{ edicion.titulo }}" />
+    <div class="edicion-info">
+      <div class="titulo">{{ edicion.titulo }}</div>
+      <div class="editorial">{{ edicion.editorial }}</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- TENGO -->
+  <div *ngIf="segment === 'tengo'" class="grid-container">
+    <ng-container *ngFor="let tomo of tomosTengo">
+      <div class="tomo-card">
+        <img [src]="tomo.imagen" />
+        <button (click)="toggleTomo(tomo)">✓</button>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- FALTAN -->
+  <div *ngIf="segment === 'faltan'" class="grid-container">
+    <ng-container *ngFor="let tomo of tomosFaltan">
+      <div class="tomo-card">
+        <img [src]="tomo.imagen" />
+        <button (click)="toggleTomo(tomo)">+</button>
+      </div>
+    </ng-container>
+  </div>
+   <!-- TODO tu contenido aquí -->
+  </div>
+</ion-content>

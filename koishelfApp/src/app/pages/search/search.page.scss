@@ -1,0 +1,119 @@
+ion-content{
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+
+}
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
+
+.searchbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+ion-searchbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+  border: solid #f44336 2px;
+  border-radius: 8px;
+  width: 96%;
+  box-shadow: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+ion-item {
+  --background: var(--ion-color-primary);
+  --inner-border-width: 0; /* Elimina bordes internos */
+  color: var(--ion-color-tertiary);
+}
+ion-accordion-group{
+    --background: var(--ion-color-primary);
+}
+
+ion-checkbox {
+    --background: var(--ion-color-primary);
+    
+}
+
+ion-checkbox {
+  --checkbox-background: var(--ion-color-primary);       /* color del fondo cuando NO está marcado */
+  --checkbox-background-checked: var(--ion-color-secondary); /* color del fondo cuando SÍ está marcado */
+  --checkmark-color: var(--ion-color-primary);           /* color de la palomita/marca */
+  --border-color: var(--ion-color-secondary) ;               /* color del borde del checkbox */
+  --border-color-checked: var(--ion-color-secondary); 
+   color: var(--ion-color-tertiary);       /* borde cuando está marcado */
+}
+
+ion-accordion {
+  background-color: var(--ion-color-primary); /* Fondo del área expandida */
+}
+.icon-inner {
+    color: var(--ion-color-light);
+}
+ion-accordion ion-item::part(detail-icon) {
+  color: var(--ion-color-light);
+}
+
+.line{
+        height: 0.5px;
+        width: 95%;
+        background-color: #E0DCC5 ;
+        align-self: center;
+        margin-left: 10px;
+    }
+ion-card {
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  margin-right: 4px;
+  margin-left: 4px;
+  width: 125px;
+}
+
+img {
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+
+ion-card-subtitle {
+  color: #E0DCC5;
+  font-family: "Roboto-Regular", sans-serif !important;
+  margin-top: -5px;
+  font-size: 1.1em;
+  text-align: start;
+  padding-top: 2px;
+  padding-bottom: 0%;
+}
+
+ion-card-content {
+  margin-bottom: -10px;
+  padding: 5px;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 160px; // ajusta al tamaño del card
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  gap: 5px;
+}
+
+
+ion-card {
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+

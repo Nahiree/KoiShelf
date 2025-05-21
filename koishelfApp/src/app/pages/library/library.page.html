@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="library-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Biblioteca</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+  <div class="searchbar-wrapper">
+    <ion-searchbar></ion-searchbar>
+
+  </div>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment [(ngModel)]="segmentValue" class="custom-segment">
+  <ion-segment-button value="favoritos">
+    <ion-label>FAVORITOS</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="recientes">
+    <ion-label>RECIENTES</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="terminados">
+    <ion-label>TERMINADOS</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+<div class="card-grid">
+  <ion-card *ngFor="let manga of mangas" class="manga-card">
+    <img alt="manga-cover" [src]="manga.cover" />
+    
+    <ion-card-content>
+      <ion-card-subtitle class="ellipsis">
+        {{ manga.id }}
+      </ion-card-subtitle>
+      
+      <!-- Barra de progreso decorativa -->
+      <div class="progress-bar"></div>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+ 
+</ion-content>
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>
