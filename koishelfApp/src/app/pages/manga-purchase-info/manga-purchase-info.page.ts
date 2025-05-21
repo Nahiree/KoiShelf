@@ -18,6 +18,7 @@ export class MangaPurchaseInfoPage implements OnInit {
     publisher: 'Viz Media',
     volume: 'Volumen 1',
     format: 'Tamaño tankoubon con sobrecubierta',
+    rating: "3",
     similar: [
       'assets/mangas/haikyuu02.jpg',
       'assets/mangas/haikyuu22.jpg',

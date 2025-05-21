@@ -36,7 +36,7 @@
             <img alt="manga-cover" src= "{{ manga.banner}}"/>
             <ion-card-content>
               <ion-card-subtitle><p>{{ manga.id}}</p></ion-card-subtitle>
-              <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+              <app-rating [rating]="manga.rating"></app-rating>
               <ion-card-subtitle class="extra-small">US$ {{ manga.price}}</ion-card-subtitle>
             </ion-card-content>
           </ion-card>

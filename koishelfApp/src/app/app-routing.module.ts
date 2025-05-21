@@ -78,7 +78,11 @@ const routes: Routes = [
   {
     path: 'manga-purchase-info',
     loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then(m => m.MangaPurchaseInfoPageModule)
+  },  {
+    path: 'credit-card',
+    loadChildren: () => import('./pages/credit-card/credit-card.module').then( m => m.CreditCardPageModule)
   }
+
 ];
 
 @NgModule({

@@ -14,7 +14,7 @@
 
       <ion-col size="8">
         <h1 class="title">{{ manga.title }}</h1>
-        <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+        <app-rating [rating]="3"></app-rating>
         <p class="author">{{ manga.author }}</p>
         <h2 class="price">US$ {{ manga.price }}</h2>
 
@@ -75,7 +75,7 @@
   <ion-card>
     <ion-card-header>
       <ion-label><strong>AKAASHI'S DETONATOR 5000</strong></ion-label>
-       <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+       <!-- <app-rating [(rating)]="puntuacionDelUsuario"></app-rating> -->
     </ion-card-header>
     <ion-card-content>
       <p><strong>Beautiful edition!</strong></p>

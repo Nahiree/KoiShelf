@@ -2,7 +2,6 @@
   <img
   *ngFor="let star of [1,2,3,4,5]"
     [src]="star <= rating ? 'assets/icon/estrellita2.svg' : 'assets/icon/estrellita.svg'"
-    (click)="rate(star)"
     class="star-img"
     alt="Star"
   />
