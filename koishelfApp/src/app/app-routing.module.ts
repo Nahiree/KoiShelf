@@ -78,7 +78,11 @@ const routes: Routes = [
   {
     path: 'manga-purchase-info',
     loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then(m => m.MangaPurchaseInfoPageModule)
+  },  {
+    path: 'purchase',
+    loadChildren: () => import('./pages/purchase/purchase.module').then( m => m.PurchasePageModule)
   }
+
 ];
 
 @NgModule({

@@ -1,7 +1,58 @@
+ion-content {
+--background: var(--ion-color-primary);
+--color: var(--ion-color-tertiary);
+}
+
+ion-button.button {
+  --color: var(--ion-color-tertiary);
+  --background: var(--ion-color-secondary);
+}
+
+ion-card {
+--background: var(--ion-color-primary);
+--color: var(--ion-color-tertiary);
+}
+
+ion-row.product-card{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+ion-list {
+--background: var(--ion-color-primary);
+--color: var(--ion-color-tertiary);
+--ion-item-border-color: transparent; 
+}
+
+ion-item {
+--background: var(--ion-color-primary);
+--color: var(--ion-color-tertiary);
+}
+
+ion-chip.util {
+  --color: var(--ion-color-primary);
+  --background: var(--ion-color-warning);
+}
+
+ion-note{
+  color: var(--ion-color-light);
+}
+
+ion-card.comentario{
+  border: 2px solid var(--ion-color-secondary);
+  border-radius: 12px;
+}
+
+p{
+  color: var(--ion-color-light);
+}
 .cover {
-  width: 100%;
+  width: 136px;
+  height: 202px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-right: 31px;
 }
 
 .title {
@@ -10,14 +61,15 @@
   margin-bottom: 4px;
 }
 
-.author {
-  color: #ccc;
-  font-style: italic;
-}
-
-.price {
+.price{
+  color: var(--ion-color-light);
   font-size: 1.2rem;
   margin-top: 6px;
+}
+
+.author {
+  color: var(--ion-color-light);
+  font-style: italic;
 }
 
 .buttons {
@@ -39,4 +91,57 @@
   width: 80px;
   height: auto;
   border-radius: 10px;
+}
+
+
+
+.info-header {
+  padding: 16px;
+  padding-bottom: 4px;
+}
+
+.info-title {
+  font-weight: bold;
+  color: var(--ion-color-tertiary);
+  margin: 0;
+}
+
+.info-divider {
+  height: 2px;
+  background-color: var(--ion-color-tertiary);
+  border-radius: 2px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.comentario {
+  border: 2px solid var(--ion-color-primary);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px; // separación entre ícono y texto
+}
+
+.user-info ion-icon {
+  font-size: 35px;
+}
+
+.user-info ion-label {
+  margin: 0;
+  font-size: medium;
+  color: var(--ion-color-tertiary);
+}
+
+.actions{
+  display: flex;
+  gap: 50px;
+  margin-top: 10px;
+}
+
+.actions ion-icon{
+  font-size: 35px;
 }

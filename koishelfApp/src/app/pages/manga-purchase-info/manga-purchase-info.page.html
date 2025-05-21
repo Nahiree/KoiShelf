@@ -1,89 +1,103 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>manga-purchase-info</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/store" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">manga-purchase-info</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-
+<ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col size="4">
+    <ion-row class="product-card">
+      <div>
         <img [src]="manga.image" class="cover" alt="Portada del manga" />
-      </ion-col>
-
-      <ion-col size="8">
-        <h1 class="title">{{ manga.title }}</h1>
+      </div>
+      <div>
+        <h2 class="title">{{ manga.title }}</h2>
         <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
-        <p class="author">{{ manga.author }}</p>
-        <h2 class="price">US$ {{ manga.price }}</h2>
+        <h6 class="author">{{ manga.author }}</h6>
+        <h4 class="price">US$ {{ manga.price }}</h4>
 
-        <div class="buttons">
-          <ion-button color="success">Comprar</ion-button>
-          <ion-button fill="clear">
-            <ion-icon name="cart-outline"></ion-icon>
+        <div class="actions">
+          <ion-button class="button" [routerLink]="['/purchase']">
+            Comprar
           </ion-button>
+          <ion-icon name="cart"></ion-icon>
         </div>
-      </ion-col>
+      </div>
     </ion-row>
   </ion-grid>
 
-  <h3>Sinopsis</h3>
-  <p>{{ manga.synopsis }}</p>
-  <ion-button color="danger" size="small">Leer más</ion-button>
-
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Info de producto</ion-card-title>
+      <h5>Sinopsis</h5>
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label>Título</ion-label>
-          <ion-note slot="end">{{ manga.title }}</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Número de páginas</ion-label>
-          <ion-note slot="end">{{ manga.pages }}</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Idioma</ion-label>
-          <ion-note slot="end">{{ manga.language }}</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Editorial</ion-label>
-          <ion-note slot="end">{{ manga.publisher }}</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>No. de tomo</ion-label>
-          <ion-note slot="end">{{ manga.volume }}</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Formato</ion-label>
-          <ion-note slot="end">{{ manga.format }}</ion-note>
-        </ion-item>
-      </ion-list>
+      <p>{{ manga.synopsis }}</p>
+        <div class="actions">
+          <ion-button class="button" [routerLink]="['/synopsis']">
+            Leer sinopsis
+          </ion-button>
+        </div>
     </ion-card-content>
   </ion-card>
 
-  <h3>Productos similares comprados en conjunto</h3>
+  <ion-card color="primary">
+    <ion-list>
+      <div class="info-header">
+        <h5 class="info-title">Info de producto</h5>
+        <div class="info-divider"></div>
+      </div>
+
+    <ion-item>
+      <ion-label>Título</ion-label>
+      <ion-note slot="end">{{ manga.title }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Número de páginas</ion-label>
+      <ion-note slot="end">{{ manga.pages }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Idioma</ion-label>
+      <ion-note slot="end">{{ manga.language }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Editorial</ion-label>
+      <ion-note slot="end">{{ manga.publisher }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>No. de tomo</ion-label>
+      <ion-note slot="end">{{ manga.volume }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Formato</ion-label>
+      <ion-note slot="end">{{ manga.format }}</ion-note>
+    </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <h6 class="ion-padding">Productos similares comprados en conjunto</h6>
     <div class="similar-container">
       <img *ngFor="let img of manga.similar" [src]="img" class="similar-img" />
     </div>
 
-  <h3>Opiniones destacadas</h3>
-  <ion-card>
-    <ion-card-header>
-      <ion-label><strong>AKAASHI'S DETONATOR 5000</strong></ion-label>
-       <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
-    </ion-card-header>
-    <ion-card-content>
-      <p><strong>Beautiful edition!</strong></p>
-      <p>EL MEJOR MANGA DE LA HISTORIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
-      <ion-chip color="success" outline>Útil</ion-chip>
-      <ion-chip color="danger" outline>Reportar</ion-chip>
-    </ion-card-content>
-  </ion-card>
+  <h5 class="ion-padding">Opiniones destacadas</h5>
+    <ion-card class="comentario">
+  <ion-card-header>
+    <div class="user-info">
+      <ion-icon aria-hidden="true" name="person-circle-sharp" slot="start"></ion-icon>
+      <ion-label><p>AKAASHI'S DETONATOR 5000</p></ion-label>
+    </div>
+    <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+  </ion-card-header>
 
+  <ion-card-content>
+    <p><strong>Beautiful edition!</strong></p>
+    <p>EL MEJOR MANGA DE LA HISTORIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <ion-chip class="util">Útil</ion-chip>
+    <ion-chip color="secondary" outline>Reportar</ion-chip>
+  </ion-card-content>
+</ion-card>
 </ion-content>
 

@@ -1,3 +1,5 @@
 <div class="icon-btn" (click)="toggle()">
-  <img [src]="filled ? 'assets/icon/corazon-filled.svg' : 'assets/icon/corazon-outline.svg'" alt="Heart" />
+  <img *ngIf="filled" src="assets/icon/heart2.svg" alt="Corazón lleno" class="heart-icon" />
+  <img *ngIf="!filled" src="assets/icon/heart.svg" alt="Corazón vacío" class="heart-icon" />
 </div>
+

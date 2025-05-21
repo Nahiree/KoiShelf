@@ -3,12 +3,12 @@
   display: inline-block;
 }
 
-.heart-icon {
+.share-icon {
   width: 32px;
   height: 32px;
   transition: transform 0.2s ease;
 }
 
-.icon-btn:active .heart-icon {
+.icon-btn:active .share-icon {
   transform: scale(1.1);
 }

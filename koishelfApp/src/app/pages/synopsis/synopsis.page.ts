@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-synopsis',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class SynopsisPage implements OnInit {
-   mangasypnosis: any;
+  mangasypnosis: any;
 
   constructor() { }
 
