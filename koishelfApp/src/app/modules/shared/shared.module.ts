@@ -11,12 +11,13 @@ import { RatingComponent } from 'src/app/components/rating/rating.component';
 import { HeartComponent } from "src/app/components/heart/heart.component";
 import { SaveComponent } from "src/app/components/save/save.component";
 import { ShareIconComponent } from "src/app/components/share-icon/share-icon.component";
+import { MangaSectionComponent } from 'src/app/components/manga-section/manga-section.component';
 
 
 
 @NgModule({
-  exports:[MenuComponent, ButtonlinearComponent, CardWithTitleComponent, CardWithProgressComponent, CardStoreComponent, RatingComponent, HeartComponent, SaveComponent, ShareIconComponent],
-  declarations: [MenuComponent, ButtonlinearComponent, CardWithTitleComponent, CardWithProgressComponent, CardStoreComponent, RatingComponent, HeartComponent, SaveComponent, ShareIconComponent],
+  exports:[MenuComponent, ButtonlinearComponent, CardWithTitleComponent, CardWithProgressComponent, CardStoreComponent, RatingComponent, HeartComponent, SaveComponent, ShareIconComponent, MangaSectionComponent],
+  declarations: [MenuComponent, ButtonlinearComponent, CardWithTitleComponent, CardWithProgressComponent, CardStoreComponent, RatingComponent, HeartComponent, SaveComponent, ShareIconComponent, MangaSectionComponent],
   imports: [
     IonicModule.forRoot(),
     RouterModule,

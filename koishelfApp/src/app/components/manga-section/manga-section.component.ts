@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -8,12 +8,13 @@ import { DatabaseService } from 'src/app/services/database.service';
 @Component({
   selector: 'app-manga-section',
   templateUrl: './manga-section.component.html',
-  imports: [CommonModule, IonicModule],
   styleUrls: ['./manga-section.component.scss'],
-  standalone: true
+  standalone: false
 })
 export class MangaSectionComponent implements OnInit {
-  @Input() ids: string[] = [];
+  
+ @Input() ids: string[] = [];
+
 
   mangas:any;
 
@@ -39,4 +40,5 @@ export class MangaSectionComponent implements OnInit {
       this.mangas = res.filter(manga => this.ids.includes(manga.id));
     });
   }
+
 }

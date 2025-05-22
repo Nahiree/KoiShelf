@@ -8,7 +8,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
-import { MangaSectionComponent } from '../../components/manga-section/manga-section.component';
+
 
 @NgModule({
   imports: [
@@ -17,7 +17,6 @@ import { MangaSectionComponent } from '../../components/manga-section/manga-sect
     IonicModule,
     SearchPageRoutingModule,
     SharedModule,
-    MangaSectionComponent
   ],
   declarations: [SearchPage]
 })

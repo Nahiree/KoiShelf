@@ -15,7 +15,7 @@
       </div>
       <div>
         <h2 class="title">{{ manga.title }}</h2>
-        <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+        <!-- <app-rating [(rating)]="puntuacionDelUsuario"></app-rating> -->
         <h6 class="author">{{ manga.author }}</h6>
         <h4 class="price">US$ {{ manga.price }}</h4>
         <div class="actions">
@@ -80,6 +80,7 @@
     <div class="similar-container">
       <img *ngFor="let img of manga.similar" [src]="img" class="similar-img" />
     </div>
+
   <h5 class="ion-padding">Opiniones destacadas</h5>
     <ion-card class="comentario">
   <ion-card-header>
@@ -87,8 +88,9 @@
       <ion-icon aria-hidden="true" name="person-circle-sharp" slot="start"></ion-icon>
       <ion-label><p>AKAASHI'S DETONATOR 5000</p></ion-label>
     </div>
-    <app-rating [(rating)]="puntuacionDelUsuario"></app-rating>
+    <!-- <app-rating [(rating)]="puntuacionDelUsuario"></app-rating> -->
   </ion-card-header>
+
   <ion-card-content>
     <p><strong>Beautiful edition!</strong></p>
     <p>EL MEJOR MANGA DE LA HISTORIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>

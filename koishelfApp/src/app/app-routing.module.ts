@@ -93,7 +93,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/synopsis/synopsis.module').then(m => m.SynopsisPageModule)
   },
   {
-    path: 'manga-detail',
+    path: 'manga-detail/:mangaId',
     loadChildren: () => import('./pages/manga-detail/manga-detail.module').then(m => m.MangaDetailPageModule)
   },
   {
