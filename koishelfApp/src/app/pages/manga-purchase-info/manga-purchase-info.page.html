@@ -11,13 +11,13 @@
   <ion-grid>
     <ion-row class="product-card">
       <div>
-        <img [src]="manga.image" class="cover" alt="Portada del manga" />
+        <img [src]="data?.banner" class="cover" alt="Portada del manga" />
       </div>
       <div>
-        <h2 class="title">{{ manga.title }}</h2>
-        <!-- <app-rating [(rating)]="puntuacionDelUsuario"></app-rating> -->
-        <h6 class="author">{{ manga.author }}</h6>
-        <h4 class="price">US$ {{ manga.price }}</h4>
+        <h2 class="title">{{ data?.title }}</h2>
+        <app-rating [rating]="data?.rating"></app-rating>
+        <h6 class="author">{{ data?.author }}</h6>
+        <h4 class="price">US$ {{ data?.price }}</h4>
         <div class="actions">
           <ion-button class="button" [routerLink]="['/purchase']">
             Comprar
@@ -33,9 +33,9 @@
       <h5>Sinopsis</h5>
     </ion-card-header>
     <ion-card-content>
-      <p>{{ manga.synopsis }}</p>
+      <p>{{ data?.synopsis }}</p>
         <div class="actions">
-          <ion-button class="button" [routerLink]="['/synopsis']">
+          <ion-button class="button" [routerLink]="['/synopsis/'+data?.id]">
             Leer sinopsis
           </ion-button>
         </div>
@@ -51,34 +51,34 @@
 
     <ion-item>
       <ion-label>Título</ion-label>
-      <ion-note slot="end">{{ manga.title }}</ion-note>
+      <ion-note slot="end">{{ data?.id }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Número de páginas</ion-label>
-      <ion-note slot="end">{{ manga.pages }}</ion-note>
+      <ion-note slot="end">{{ data?.pages }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Idioma</ion-label>
-      <ion-note slot="end">{{ manga.language }}</ion-note>
+      <ion-note slot="end">{{ data?.languages }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Editorial</ion-label>
-      <ion-note slot="end">{{ manga.publisher }}</ion-note>
+      <ion-note slot="end">{{ data?.publisher }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>No. de tomo</ion-label>
-      <ion-note slot="end">{{ manga.volume }}</ion-note>
+      <ion-note slot="end">{{ data?.volume }}</ion-note>
     </ion-item>
     <ion-item>
       <ion-label>Formato</ion-label>
-      <ion-note slot="end">{{ manga.format }}</ion-note>
+      <ion-note slot="end">{{ data?.format }}</ion-note>
     </ion-item>
     </ion-list>
   </ion-card>
 
   <h6 class="ion-padding">Productos similares comprados en conjunto</h6>
     <div class="similar-container">
-      <img *ngFor="let img of manga.similar" [src]="img" class="similar-img" />
+      <img *ngFor="let img of data?.similar" [src]="img" class="similar-img" />
     </div>
 
   <h5 class="ion-padding">Opiniones destacadas</h5>

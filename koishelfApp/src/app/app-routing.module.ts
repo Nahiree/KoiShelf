@@ -89,7 +89,7 @@ const routes: Routes = [
   },
 
 {
-    path: 'synopsis',
+    path: 'synopsis/:mangaId',
     loadChildren: () => import('./pages/synopsis/synopsis.module').then(m => m.SynopsisPageModule)
   },
   {
@@ -97,7 +97,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/manga-detail/manga-detail.module').then(m => m.MangaDetailPageModule)
   },
   {
-    path: 'manga-purchase-info',
+    path: 'manga-purchase-info/:mangaId',
     loadChildren: () => import('./pages/manga-purchase-info/manga-purchase-info.module').then(m => m.MangaPurchaseInfoPageModule)
   },
   {
