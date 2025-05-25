@@ -18,9 +18,36 @@ export class SearchPage implements OnInit {
   ) { 
     this.fetchMangas(); //Llamar a la función, utilizamos this. para llamar algo de la misma función
   }
+ selectedGenres: Set<string> = new Set();
+selectedDemographics: Set<string> = new Set();
+
 
   ngOnInit() {
   }
+
+  toggleGenre(event: any) {
+  const genre = event.target.value;
+
+  if (event.detail.checked) {
+    this.selectedGenres.add(genre);
+  } else {
+    this.selectedGenres.delete(genre);
+  }
+
+  this.applyFilters(); // Aplica todos los filtros (texto + género)
+}
+
+toggleDemographic(event: any) {
+  const demographic = event.target.value;
+
+  if (event.detail.checked) {
+    this.selectedDemographics.add(demographic);
+  } else {
+    this.selectedDemographics.delete(demographic);
+  }
+
+  this.applyFilters();
+}
 
 
   fetchMangas() {
@@ -32,28 +59,32 @@ export class SearchPage implements OnInit {
     });
 }
 
-  filterMangas() {
-    const query = this.searchText.trim().toLowerCase();
-    if (query === '') {
-      this.mangas = this.allMangas;
-    } else {
-      this.mangas = this.allMangas.filter(manga =>
-        manga.id.toLowerCase().includes(query)
-      );
-    }
-  }
-  handleSearch(event: any) {
-  const query = event.target.value?.toLowerCase().trim() || '';
+ applyFilters() {
+  const query = this.searchText.trim().toLowerCase();
 
-  if (query === '') {
-    // Si el campo está vacío, mostrar todos
-    this.mangas = [...this.allMangas];
-  } else {
-    // Si hay texto, filtrar los mangas cuyo ID contenga el texto
-    this.mangas = this.allMangas.filter(manga =>
-      manga.id.toLowerCase().includes(query)
-    );
-  }
+  this.mangas = this.allMangas.filter(manga => {
+    const matchesText = manga.id.toLowerCase().includes(query);
+
+    const genres = manga.genre_demographic?.genres || [];
+    const demographic = manga.genre_demographic?.demographic || '';
+
+    const matchesGenre =
+      this.selectedGenres.size === 0 ||
+      [...this.selectedGenres].some(g => genres.includes(g));
+
+    const matchesDemographic =
+      this.selectedDemographics.size === 0 ||
+      this.selectedDemographics.has(demographic);
+
+    return matchesText && matchesGenre && matchesDemographic;
+  });
 }
+
+
+ handleSearch(event: any) {
+  this.searchText = event.target.value?.toLowerCase().trim() || '';
+  this.applyFilters();
+}
+
 
 }

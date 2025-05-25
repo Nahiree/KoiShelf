@@ -9,6 +9,7 @@ import { SynopsisPageRoutingModule } from './synopsis-routing.module';
 import { SynopsisPage } from './synopsis.page';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 
+
 @NgModule({
   imports: [
     CommonModule,

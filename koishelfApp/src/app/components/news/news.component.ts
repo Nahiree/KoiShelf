@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-news',
@@ -10,6 +12,9 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent {
+  constructor(
+      private router: Router
+    ){}
   currentIndex = 0;
 
   news = [
@@ -47,6 +52,10 @@ export class NewsComponent {
   setIndex(index: number) {
     this.currentIndex = index;
   }
+  goToNewsPage() {
+  this.router.navigate(['/news']);
+}
+
 }
 
 

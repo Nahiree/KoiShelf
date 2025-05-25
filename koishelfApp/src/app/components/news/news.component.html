@@ -1,19 +1,16 @@
-<div class="news-container">
+<div class="news-container" (click)="goToNewsPage()">
   <div class="image-wrapper" [class.fade]="fading">
-
     <img [src]="news[currentIndex].image" alt="Noticia" />
     <div class="overlay"></div>
     <div class="label">NOTICIAS</div>
     <div class="text">{{ news[currentIndex].title }}</div>
-
   </div>
 
   <div class="dots">
     <div
       *ngFor="let item of news; let i = index"
       [class.active]="i === currentIndex"
-      (click)="setIndex(i)">
+      (click)="setIndex(i); $event.stopPropagation()">
     </div>
   </div>
 </div>
-

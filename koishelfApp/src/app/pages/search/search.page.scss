@@ -116,4 +116,8 @@ ion-card {
   margin-bottom: 0;
 }
 
+ion-accordion div[slot="content"] ion-checkbox {
+  margin-bottom: 12px;
+  display: block;
+}
 
