@@ -2,7 +2,10 @@ ion-content {
 --background: var(--ion-color-primary);
 --color: var(--ion-color-tertiary);
 }
-
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
 ion-button.button {
   --color: var(--ion-color-tertiary);
   --background: var(--ion-color-secondary);
@@ -144,4 +147,24 @@ p{
 
 .actions ion-icon{
   font-size: 35px;
+}
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-card > div:first-child {
+  flex: 0 0 auto;
+}
+
+.cover {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-card > div:last-child {
+  flex: 1;
 }

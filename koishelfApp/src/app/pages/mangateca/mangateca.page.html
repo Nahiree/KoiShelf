@@ -11,7 +11,7 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 
   <div class="prueba">
-    <ion-searchbar placeholder="Buscar tus colecciones"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar tus colecciones" routerLink="/search"></ion-searchbar>
   </div>
 
   <ion-grid class="ion-padding-horizontal">
@@ -34,7 +34,7 @@
       </ion-chip>
     </ion-row>
   </ion-grid>
-
+  <div class="contenedor-lista">
   <ion-list class="lista" >
     <ion-item *ngFor="let manga of mangas" lines="none" detail="true" [routerLink]="['/mangateca-edicion']" >
       <ion-thumbnail slot="start">
@@ -49,4 +49,5 @@
       </ion-label>
     </ion-item>
   </ion-list>
+  </div>
 </ion-content>
