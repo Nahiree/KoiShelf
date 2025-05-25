@@ -2,7 +2,10 @@ ion-content {
   --background: var(--ion-color-primary);
   --color: var(--ion-color-tertiary);
 }
-
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
 ion-button {
   --color: var(--ion-color-tertiary);
   --background: var(--ion-color-secondary);

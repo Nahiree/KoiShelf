@@ -33,7 +33,7 @@
     <ion-row>
       <ion-col size="4" *ngFor="let manga of mangas">
           <ion-card [routerLink]="['/manga-purchase-info', manga.id]">
-            <img alt="manga-cover" src= "{{ manga.banner}}"/>
+            <img alt="manga-cover" src= "{{ manga.cover}}"/>
             <ion-card-content>
               <ion-card-subtitle><p>{{ manga.id}}</p></ion-card-subtitle>
               <app-rating [rating]="manga.rating"></app-rating>
