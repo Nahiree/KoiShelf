@@ -11,10 +11,10 @@
   <ion-grid>
     <ion-row class="product-card">
       <div>
-        <img [src]="data?.banner" class="cover" alt="Portada del manga" />
+        <img [src]="data?.cover" class="cover" alt="Portada del manga" />
       </div>
       <div>
-        <h2 class="title">{{ data?.title }}</h2>
+        <h2 class="title">{{ data?.id }}</h2>
         <app-rating [rating]="data?.rating"></app-rating>
         <h6 class="author">{{ data?.author }}</h6>
         <h4 class="price">US$ {{ data?.price }}</h4>

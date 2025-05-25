@@ -9,7 +9,7 @@
   </ion-toolbar>
   <ion-toolbar>
   <div class="searchbar-wrapper">
-    <ion-searchbar routerLink="/search" (ionFocus)="goToSearch()"></ion-searchbar>
+    <ion-searchbar routerLink="/search"></ion-searchbar>
 
   </div>
 </ion-toolbar>
@@ -21,76 +21,19 @@
 <app-news></app-news>
 
 
-<div class="si">
-  <ion-card-title>Nuevos Lanzamientos</ion-card-title>
-  <a routerLink="/register">Más</a>
-</div>
-
-  <!-- <ion-slides class="horizontal-swiper">
-  <ion-slide>
-    <app-manga-section [ids]="['Haikyuu!!', 'Jujutsu Kaisen', 'Fullmetal Alchemist', 'El chico del que estaba enamorada no era un chico']"></app-manga-section>
-  </ion-slide>
-  </ion-slides>
-
+<ng-container *ngFor="let seccion of secciones">
   <div class="si">
-  <ion-card-title>Porque viste Haikyuu!!</ion-card-title>
-  <a routerLink="/register">Más</a>
-</div>
+    <ion-card-title>{{ seccion.titulo }}</ion-card-title>
+    <a [routerLink]="['/section']" [queryParams]="{ titulo: seccion.titulo }">Más</a>
+  </div>
 
-  <ion-slides  class="horizontal-swiper">
-  <ion-slide>
-    <app-manga-section [ids]="['Chihayafuru', 'Slam Dunk', 'Junjo Romantica', 'Banana Fish']"></app-manga-section>
-  </ion-slide>
-  </ion-slides>
+  <swiper-container slides-per-view="3.2" style="width: 96%; height: 250px;" space-between="16">
+    <swiper-slide *ngFor="let id of mangasPorGenero[seccion.titulo]">
+      <app-manga-section [ids]="[id]"></app-manga-section>
+    </swiper-slide>
+  </swiper-container>
+</ng-container>
 
-   <div class="si">
-  <ion-card-title>Aclamadas por la crítica</ion-card-title>
-  <a routerLink="/register">Más</a>
-</div>
-
-  <ion-slides  class="horizontal-swiper">
-  <ion-slide>
-    <app-manga-section [ids]="['Chainsaw Man', 'Death Note', 'Houseki no Kuni', 'Kuroshitsuji']"></app-manga-section>
-  </ion-slide>
-  </ion-slides>
-
-  <div class="si">
-  <ion-card-title>Nuevos Lanzamientos</ion-card-title>
-  <a routerLink="/register">Más</a>
-</div>
-
-  <ion-slides  class="horizontal-swiper">
-  <ion-slide>
-    <app-manga-section [ids]="['Kimetsu no Yaiba', 'Kimi ni Todoke', 'Kowloon Generic Romance', 'Lovely Complex']"></app-manga-section>
-  </ion-slide>
-  </ion-slides>
-  <div class="si">
-  <ion-card-title>Porque viste Haikyuu!!</ion-card-title>
-  <a routerLink="/register">Más</a>
-</div>
-
-  <ion-slides  class="horizontal-swiper">
-  <ion-slide>
-    <app-manga-section [ids]="['Nana', 'Neon Genesis Evangelion', 'Orange', 'Naruto']"></app-manga-section>
-  </ion-slide>
-  </ion-slides>
-  
- <div class="si">
-  <ion-card-title>Aclamadas por la crítica</ion-card-title>
-  <a routerLink="/register">Más</a>
-</div>
-
-  <ion-slides  class="horizontal-swiper">
-  <ion-slide>
-    <app-manga-section [ids]="['One Piece', 'Paradise Kiss', 'Pluto', 'Skip Beat!']"></app-manga-section>
-  </ion-slide>
-  </ion-slides> -->
-  
-<swiper-container [slidesPerView]="2.5">
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-</swiper-container>
 
 </ion-content>
 

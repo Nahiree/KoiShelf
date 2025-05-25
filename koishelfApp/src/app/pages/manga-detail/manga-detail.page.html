@@ -1,59 +1,69 @@
+
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-     <ion-buttons slot="start">
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="/" color="light"></ion-back-button>
     </ion-buttons>
     <ion-title color="light">Detalles de manga</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
+  <div class="manga-card-wrapper">
   <div class="manga-card">
-    <img src="assets/manga-cover/fma.jpg" alt="Cover" class="cover" />
+    <img [src]="manga.cover" alt="Cover" class="cover" />
 
     <div class="info">
-      <h3>{{ manga.title }}</h3>
-     <!-- <app-rating [(rating)]="puntuacionDelUsuario"></app-rating> -->
-
+      <h3>{{ manga.id }}</h3>
+      <app-rating [rating]="manga.rating"></app-rating>
       <h6 class="author">{{ manga.author }}</h6>
-     <div class="icon-group">
+
+      <div class="icon-group">
         <app-heart></app-heart>
         <app-share-icon></app-share-icon>
         <app-save></app-save>
       </div>
 
-
       <div class="actions">
-        <ion-button class="button" [routerLink]="['/synopsis']">
+        <ion-button class="button" [routerLink]="['/synopsis', manga.id]">
           Leer sinopsis
         </ion-button>
       </div>
     </div>
   </div>
+</div>
+  <!-- Etiquetas (géneros) -->
+  <div class="tags" *ngIf="tags.length > 0">
+  <ion-chip class="tag" *ngFor="let tag of tags">
+    {{ tag }}
+  </ion-chip>
+</div>
 
-  <div class="tags">
-        <ion-chip class="tag">Shonen</ion-chip>
-        <ion-chip class="tag">Aventura</ion-chip>
-        <ion-chip class="tag">Fantasia</ion-chip>
-        <ion-chip class="tag">Default</ion-chip>
-  </div>
 
+  <!-- Lista de capítulos -->
+   <div class="chapter-list-wrapper">
   <ion-list class="chapter-list">
-  <ion-item 
-    *ngFor="let chapter of chapters" 
-    button detail (click)="openChapter(chapter.number)">
-    <ion-avatar slot="start">
-      <img src="assets/icon/koishelf-logo2.svg" alt="Logo" />
-    </ion-avatar>
+    <ion-item
+      *ngFor="let chapter of chapters"
+      button
+      detail
+      (click)="openChapter(chapter.number)"
+      [routerLink]="['/view']"
+    >
+      <ion-avatar slot="start">
+       <img src="assets/icon/koishelf-logo2.svg" alt="Logo" />
+      </ion-avatar>
 
-    <ion-label>
-      <h6>CAPÍTULO {{ chapter.number }}</h6>
-      <p>{{ chapter.title }}</p>
-    </ion-label>
+      <ion-label>
+        <h6>CAPÍTULO {{ chapter.number }}</h6>
+      </ion-label>
 
-    <ion-button fill="clear" slot="end" color="secondary">
-      LEER
-    </ion-button>
-  </ion-item>
-</ion-list>
+      <ion-button fill="clear" slot="end" color="secondary">
+
+        LEER
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  </div>
 </ion-content>

@@ -111,7 +111,8 @@ const routes: Routes = [
   {
     path: 'purchase',
     loadChildren: () => import('./pages/purchase/purchase.module').then( m => m.PurchasePageModule)
-  },  {
+  },
+  {
     path: 'lenguage',
     loadChildren: () => import('./pages/lenguage/lenguage.module').then( m => m.LenguagePageModule)
   },
@@ -122,6 +123,10 @@ const routes: Routes = [
   {
     path: 'log-languages',
     loadChildren: () => import('./pages/log-languages/log-languages.module').then( m => m.LogLanguagesPageModule)
+  },
+  {
+    path: 'credit-card',
+    loadChildren: () => import('./pages/credit-card/credit-card.module').then( m => m.CreditCardPageModule)
   }
 
 

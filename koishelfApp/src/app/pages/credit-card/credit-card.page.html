@@ -1,29 +1,73 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button default-href="#"></ion-back-button>
-  </ion-buttons>
-  <ion-title><h5>Añadir tarjeta</h5> </ion-title>
-</ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/purchase"color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">credit-card</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding">
+
+  <div class="card-visual">
+    <img src="assets/credit-card-img/Tarjeta.png" alt="Tarjeta de crédito" />
+  </div>
+
+    <ion-card class="payment-card">
+    <ion-card-content>
+      <div class="card-header">
+        <ion-icon name="card-outline" class="pago"></ion-icon>
+         <ion-card-subtitle>PAYMENT TYPE</ion-card-subtitle>
+      </div>
+
+    <ion-text class="card-price">
+      <strong>{{ total | currency:'USD':'symbol':'1.2-2' }}</strong>
+    </ion-text>
+    </ion-card-content>
+  </ion-card>
+
   <ion-list>
     <ion-item>
-      <ion-input label="Titular"  labelPlacement="floating" fill="solid" mode="md"></ion-input>
-      <ion-icon aria-hidden="true" name="person" slot="end"></ion-icon>
+      <ion-label label-placement="stacked" class="title" position="floating">Titular</ion-label>
+      <ion-icon slot="end" name="person" aria-hidden="true"></ion-icon>
+      <ion-input [(ngModel)]="cardHolder"></ion-input>
     </ion-item>
+
     <ion-item>
-      <ion-input label="Número"  labelPlacement="floating" fill="solid" mode="md"></ion-input>
-      <ion-icon aria-hidden="true" name="card" slot="end"></ion-icon>
+      <ion-label position="floating">Número</ion-label>
+      <ion-icon slot="end" name="card" aria-hidden="true"></ion-icon>
+      <ion-input [(ngModel)]="cardNumber" inputmode="numeric" maxlength="16"
+      required pattern="^[0-9]*$" (ionInput)="validateNumber('cardNumber')"></ion-input>
     </ion-item>
+
+    <ion-text color="danger" *ngIf="invalid.cardNumber">
+      <p class="ion-padding-start">Solo se permiten números</p>
+    </ion-text>
+
     <ion-item>
-      <ion-input label="Vencimiento" placeholder="00/00" fill="solid" mode="md"></ion-input>
-      <ion-icon aria-hidden="true" name="card" slot="end"></ion-icon>
+      <ion-label position="floating">Vencimiento</ion-label>
+      <ion-input [(ngModel)]="expiration" placeholder="MM/YY"
+      required pattern="^[0-9/]*$" (ionInput)="validateNumber('expiration', true)"></ion-input>
     </ion-item>
+
+    <ion-text color="danger" *ngIf="invalid.expiration">
+      <p class="ion-padding-start">Solo se permiten números y "/"</p>
+    </ion-text>
+    
     <ion-item>
-      <ion-input label="CVS" placeholder="0000" fill="solid" mode="md"></ion-input>
-      <ion-icon aria-hidden="true" name="card" slot="end"></ion-icon>
+      <ion-label position="floating">CVS</ion-label>
+      <ion-input [(ngModel)]="cvs" inputmode="numeric" maxlength="4"
+      required pattern="^[0-9]*$" (ionInput)="validateNumber('cvs')"></ion-input>
     </ion-item>
+
+    <ion-text color="danger" *ngIf="invalid.cvs">
+      <p class="ion-padding-start">Solo se permiten números</p>
+    </ion-text>
   </ion-list>
+
+  <div class="ion-text-center ion-margin-top">
+    <ion-button expand="block" (click)="submitPayment()">
+      Añadir
+    </ion-button>
+  </div>
 </ion-content>
