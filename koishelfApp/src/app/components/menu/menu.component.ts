@@ -17,7 +17,7 @@ export class MenuComponent  implements OnInit {
      { name: 'store', label: 'Tienda', icon: 'assets/icon/tienda.svg', activeIcon: 'assets/icon/tienda2.svg' },
      { name: 'profile', label: 'Perfil', icon: 'assets/icon/perfil.svg', activeIcon: 'assets/icon/perfil2.svg' },
      { name: 'forum', label: 'Foro', icon: 'assets/icon/foro.svg', activeIcon: 'assets/icon/foro2.svg' },
-     { name: '', label: 'Biblioteca', icon: 'assets/icon/library.svg', activeIcon: 'assets/icon/library.svg' }
+     { name: 'library', label: 'Biblioteca', icon: 'assets/icon/library.svg', activeIcon: 'assets/icon/library2.svg' }
   ];
   constructor(public router: Router) { }
 
