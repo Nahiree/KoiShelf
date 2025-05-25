@@ -9,8 +9,8 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class StorePage implements OnInit {
 
-  mangas:any; //declara el nombre y el tipo de variable, en este caso any por que no sabemos lo que recibiremos.
-
+  mangas: any[] = [];
+  searchText: string = '';
   constructor(
     public db: DatabaseService //Pedir acceso a la base de datos.
   ) { 
@@ -24,7 +24,15 @@ export class StorePage implements OnInit {
     alert("¡Hola! Este es un mensaje.");
   }
 
+  handleSearch(event: any) {
+    const query = event.target.value?.toLowerCase().trim() || '';
 
+    this.db.fetchFirestoreCollection('manga').subscribe((res: any[]) => {
+      this.mangas = res.filter(manga =>
+        manga.id?.toLowerCase().includes(query)
+      );
+    });
+  }
   fetchMangas(){
     this.db.fetchFirestoreCollection('manga')
     .subscribe((res: any) => {

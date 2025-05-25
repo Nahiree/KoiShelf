@@ -13,21 +13,10 @@
     <ion-row>
       <ion-col>
         <div class="prueba">
-          <ion-searchbar placeholder="Busca tus títulos favoritos"></ion-searchbar>
+          <ion-searchbar placeholder="Buscar tus títulos favoritos" (ionInput)="handleSearch($event)"></ion-searchbar>
+
         </div>
-         <ion-accordion-group>
-          <ion-accordion value="first">
-            <ion-item slot="header">
-              <ion-label>
-                <h6>Filtrar</h6>
-              </ion-label>
-            </ion-item>
-            <ion-checkbox class="ion-padding" slot="content"><p>Género</p></ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content"><p>Autor</p></ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content"><p>Demografía</p></ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content"><p>Editorial</p></ion-checkbox>
-          </ion-accordion>
-        </ion-accordion-group>
+         
       </ion-col>
     </ion-row>
     <ion-row>
