@@ -18,6 +18,10 @@ ion-tab-button {
     background-color: var(--ion-color-primary);
 }
 
+ion-tab-button.active {
+    color: var(--ion-color-secondary);
+}
+
 
 
 

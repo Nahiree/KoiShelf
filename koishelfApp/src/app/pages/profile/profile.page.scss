@@ -61,6 +61,12 @@ ion-icon {
   color: var(--ion-color-tertiary);
 }
 
+app-buttonlinear{
+  align-self: center;
+}
 
-
+.boton{
+  display: flex;
+  justify-content: center;
+}
 

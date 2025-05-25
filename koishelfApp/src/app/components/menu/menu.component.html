@@ -1,54 +1,9 @@
- <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home"
-    [routerLink]="['/home']"
-    [ngClass]="{ 'active': selectedTab === 'home' }" 
-      (click)="selectTab('home')"
-      >
-      <img 
-        [src]="selectedTab === 'home' ? 'assets/icon/home2.svg' : 'assets/icon/home.svg'" 
-        alt="home icon" 
-        class="tab-icon"
-      />
-      <ion-label>Inicio</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="store"
-    [routerLink]="['/store']"
-    [ngClass]="{ 'active': selectedTab === 'store' }" 
-      (click)="selectTab('store')"
-      >
-      <img 
-        [src]="selectedTab === 'store' ? 'assets/icon/tienda2.svg' : 'assets/icon/tienda.svg'" 
-        alt="home icon" 
-        class="tab-icon"
-      />
-      <ion-label>Tienda</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="profile"
-    [routerLink]="['/profile']"
-    [ngClass]="{ 'active': selectedTab === 'profile' }" 
-      (click)="selectTab('profile')"
-    >
-      <img 
-        [src]="selectedTab === 'profile' ? 'assets/icon/perfil2.svg' : 'assets/icon/perfil.svg'" 
-        alt="home icon" 
-        class="tab-icon"
-      />
-      <ion-label>Perfil</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="profile"
-    [routerLink]="['/forum']"
-    [ngClass]="{ 'active': selectedTab === 'forum' }" 
-      (click)="selectTab('forum')"
-    >
-      <img 
-        [src]="selectedTab === 'profile' ? 'assets/icon/foro2.svg' : 'assets/icon/foro.svg'" 
-        alt="home icon" 
-        class="tab-icon"
-      />
-      <ion-label>Foro</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <img src="assets/icon/library.svg" alt="biblioteca">
-      <ion-label>Biblioteca</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
+<ion-tab-bar slot="bottom">
+  <ion-tab-button *ngFor="let tab of tabs"
+                  [routerLink]="['/' + tab.name]"
+                  [ngClass]="{ 'active': selectedTab === tab.name }"
+                  (click)="selectTab(tab.name)">
+    <img [src]="selectedTab === tab.name ? tab.activeIcon : tab.icon" />
+    <ion-label>{{ tab.label }}</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

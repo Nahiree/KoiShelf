@@ -12,7 +12,8 @@
     <ion-row class="ion-justify-content-center ion-align-items-center">
       <ion-col size="auto" class="ion-text-center">
         <img src="assets/photo-profile/fotoperfil.svg" alt="avatar" class="distancia">
-        <h4 class="distancia">Hola! {{auth.profile?.name}}</h4>
+        <h5 >Hola!</h5>
+        <h4 class="distancia">{{auth.profile?.name}}</h4>
         <ion-button class="distancia boton-personalizado" 
         [routerLink]="['/edit-profile']">
           Editar perfil
@@ -41,6 +42,9 @@
               </ion-label>
           </ion-item>
         </ion-list>
+        <div class="boton">
+          <app-buttonlinear (click)="logout()" label="Log Out" color="#DB3F3A"></app-buttonlinear>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

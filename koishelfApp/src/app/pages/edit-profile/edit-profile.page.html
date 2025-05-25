@@ -13,13 +13,11 @@
       <ion-col>
         <ion-list>
           <ion-item>
-            <ion-input labelPlacement="floating" value="usuario_owo">
-              <div slot="label">Nombre de usuario <ion-text color="danger">(Puedes cambiarlo después de 14 días) </ion-text></div>
+            <ion-input labelPlacement="floating" label="Nombre " type="text" fill="solid" mode="md"  value="{{auth.profile?.name}}  {{auth.profile?.lastname}}" 	readonly>
             </ion-input>
           </ion-item>
           <ion-item>
-            <ion-input labelPlacement="floating" value="usuario@gmail.com">
-              <div slot="label">Correo electrónico</div>
+            <ion-input labelPlacement="floating" label="Email " type="text" fill="solid" mode="md"  value="{{auth.profile?.email}}" 	readonly>
             </ion-input>
           </ion-item>
         </ion-list>

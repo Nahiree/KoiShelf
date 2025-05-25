@@ -15,9 +15,12 @@ export class MangaPurchaseInfoPage implements OnInit {
     public activatedRoute: ActivatedRoute,
     public db: DatabaseService,
     //public cdr: ChangeDetectorRef
-  ) { }
+  ) { 
+    console.log('¡Constructor de MangaPurchaseInfoPage ejecutado!');
+  }
 
   ngOnInit() {
+    
     console.log('mangaID', this.activatedRoute.snapshot.paramMap.get('mangaId'));
     this.id = this.activatedRoute.snapshot.paramMap.get('mangaId');
     this.db.getDocumentById('manga', this.id)
@@ -26,6 +29,7 @@ export class MangaPurchaseInfoPage implements OnInit {
         this.data = res;
        //this.cdr.detectChanges();
       })
+      
   }
 
 }

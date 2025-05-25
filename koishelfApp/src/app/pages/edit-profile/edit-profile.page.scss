@@ -4,8 +4,8 @@ ion-toolbar {
 }
 
 ion-content {
-    --background: var(--ion-color-primary);
-    --color: var(--ion-color-tertiary);
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-tertiary);
 }
 
 ion-list {
@@ -13,12 +13,33 @@ ion-list {
 }
 
 ion-item {
-  --background: var(--ion-color-primary);
-  --inner-border-width: 0; /* Elimina bordes internos */
-  color: var(--ion-color-tertiary);
+  --background: transparent !important;
+  --highlight-color-focused: #DB3F3A;
+  --color: #E0DCC5;
+  color: #E0DCC5;
+  margin-bottom: 12px;
 }
 
+ion-label {
+  color: #E0DCC5 !important;
+  --color: #E0DCC5 !important;
+}
 
-ion-item:hover ion-label {
-  color: var(--ion-color-tertiary); /* mantener el mismo color al hacer hover */
+/* Estilos para ion-input en modo md (Material Design) */
+ion-input.md {
+  color: #E0DCC5;
+  --background: #151F25 !important;
+  --border-color: transparent !important;
+  --box-shadow: none !important;
+
+  /* Eliminar línea inferior */
+  --highlight-color-focused: transparent !important;
+  --highlight-color: transparent !important;
+  border-bottom: none !important;
+}
+
+/* Quitar línea inferior de la etiqueta input nativa dentro de ion-input md */
+ion-input.md input {
+  border-bottom: none !important;
+  box-shadow: none !important;
 }

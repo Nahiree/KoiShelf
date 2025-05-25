@@ -1,16 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button default-href="#"></ion-back-button>
-  </ion-buttons>
-  <ion-title><h5>Géneros preferidos</h5></ion-title>
-</ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
  <ion-grid>
     <ion-row>
       <ion-col>
+        <h3>Antes de comenzar...</h3>
+        <h2>Selecciona los géneros que quisieras ver acá: </h2>
         <ion-item *ngFor="let genre of availableGenres">
           <ion-label>{{ genre }}</ion-label>
           <ion-checkbox
@@ -22,12 +17,10 @@
       <div class="ion-text-center">
         <ion-button 
         (click)="guardarGeneros()" 
-        fill="solid" class="boton-personalizado">Guardar</ion-button>
+        [routerLink]="['/log-languages']"
+        fill="solid" class="boton-personalizado">Siguiente</ion-button>
       </div>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
-<ion-footer>
-  <app-menu></app-menu>
-</ion-footer>

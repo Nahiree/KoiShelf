@@ -111,7 +111,19 @@ const routes: Routes = [
   {
     path: 'purchase',
     loadChildren: () => import('./pages/purchase/purchase.module').then( m => m.PurchasePageModule)
+  },  {
+    path: 'lenguage',
+    loadChildren: () => import('./pages/lenguage/lenguage.module').then( m => m.LenguagePageModule)
+  },
+  {
+    path: 'log-genre',
+    loadChildren: () => import('./pages/log-genre/log-genre.module').then( m => m.LogGenrePageModule)
+  },
+  {
+    path: 'log-languages',
+    loadChildren: () => import('./pages/log-languages/log-languages.module').then( m => m.LogLanguagesPageModule)
   }
+
 
 ];
 

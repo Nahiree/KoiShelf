@@ -43,10 +43,11 @@ export class AuthService {
                     color: 'success'
                     });
                     toast.present();
-                    this.router.navigate(['/login']);
+                    await this.getProfile(uid); // Cargar y guardar el nuevo perfil
+                    this.router.navigate(['/profile']);
                     setTimeout(() => {
-                    location.reload();
-                    }, 200);
+                      this.router.navigate(['/log-genre']); // o la página que quieras
+                    }, 3000);
                 })
                 .catch(async error => {
                   console.error('Error al guardar datos en Firestore:', error);
@@ -126,4 +127,29 @@ export class AuthService {
     return user ? true : false;
   }
  */
+
+  logoutUser(): void {
+  this.afAuth.signOut().then(async () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('profile');
+    this.profile = null;
+
+    const toast = await this.toastCtrl.create({
+      message: 'Sesión cerrada correctamente.',
+      duration: 2000,
+      color: 'success'
+    });
+    toast.present();
+
+    this.router.navigate(['/login']);
+  }).catch(async error => {
+    console.error('Error al cerrar sesión:', error);
+    const toast = await this.toastCtrl.create({
+      message: 'Error al cerrar sesión.',
+      duration: 2000,
+      color: 'danger'
+    });
+    toast.present();
+  });
+}
 }

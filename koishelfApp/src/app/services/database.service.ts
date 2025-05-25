@@ -2,7 +2,6 @@ import { Injectable, Injector, NgZone, runInInjectionContext } from '@angular/co
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -133,5 +132,5 @@ export class DatabaseService {
   this.db.filterSubcollectionGroupByField('menu', 'name', 'Hamburguesa doble').subscribe(console.log);
    */
 
-
+  
 }

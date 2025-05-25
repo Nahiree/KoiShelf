@@ -3,7 +3,7 @@
   <ion-buttons slot="start">
     <ion-back-button default-href="#"></ion-back-button>
   </ion-buttons>
-  <ion-title><h5>Géneros preferidos</h5></ion-title>
+  <ion-title><h5>Idiomas elegidos</h5></ion-title>
 </ion-toolbar>
 </ion-header>
 
@@ -11,17 +11,17 @@
  <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-item *ngFor="let genre of availableGenres">
-          <ion-label>{{ genre }}</ion-label>
+        <ion-item *ngFor="let lenguage of availableLanguage">
+          <ion-label>{{ lenguage }}</ion-label>
           <ion-checkbox
             slot="end"
-            [checked]="selectedGenres.includes(genre)"
-            (ionChange)="toggleGenre(genre)"
+            [checked]="selectedLanguage.includes(lenguage)"
+            (ionChange)="toggleIdioma(lenguage)"
           ></ion-checkbox>
         </ion-item>
       <div class="ion-text-center">
         <ion-button 
-        (click)="guardarGeneros()" 
+        (click)="guardarIdiomas()" 
         fill="solid" class="boton-personalizado">Guardar</ion-button>
       </div>
       </ion-col>

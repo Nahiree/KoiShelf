@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>log-languages</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3>No te olvides de...</h3>
+        <h2>Seleccionar los idiomas de tu preferencia: </h2>
+        <ion-item *ngFor="let lenguage of availableLanguage">
+          <ion-label>{{ lenguage }}</ion-label>
+          <ion-checkbox
+            slot="end"
+            [checked]="selectedLanguage.includes(lenguage)"
+            (ionChange)="toggleIdioma(lenguage)"
+          ></ion-checkbox>
+        </ion-item>
+      <div class="ion-text-center">
+        <ion-button 
+        [routerLink]="['/home']"
+        (click)="guardarIdiomas()" 
+        fill="solid" class="boton-personalizado">Guardar</ion-button>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

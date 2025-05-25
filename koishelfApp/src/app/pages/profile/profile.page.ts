@@ -16,5 +16,9 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+  this.auth.logoutUser();
+}
+
 }
 
