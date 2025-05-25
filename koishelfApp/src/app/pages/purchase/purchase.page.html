@@ -7,83 +7,87 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
+ <ion-grid class="product-container" *ngIf="product.visible">
+  <ion-row class="product-row">
+    <ion-col size="4" class="img-col">
+      <img [src]="product.image" class="product-img" />
+    </ion-col>
 
+    <ion-col size="8" class="info-col">
+      <div class="product-info">
+        <div>
+          <strong>{{ product.title }}</strong><br />
+          <span>{{ product.edition }}</span>
+        </div>
 
-<ion-content class="ion-padding">
-  <ion-card class="product-card">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="4">
-          <img [src]="product.image" class="product-img" />
-        </ion-col>
-        <ion-col size="8">
-          <div class="product-details">
-            <strong>{{ product.title }}</strong><br />
-            {{ product.edition }}
+        <div class="price-delete">
+          <div class="price"> US<br />
+            <strong>${{ product.price | number }}</strong>
           </div>
+          <ion-icon name="trash-outline" class="trash-icon" (click)="removeProduct()"></ion-icon>
+        </div>
+      </div>
 
-          <div class="price-trash">
-            <div>ARG<br /><strong>${{ product.price | number }}</strong></div>
-            <ion-icon name="trash-outline" class="trash-icon"></ion-icon>
-          </div>
+      <div class="quantity-selector">
+        <ion-button class="cantidad" size="small" (click)="decreaseQuantity()">–</ion-button>
+        <ion-button class="numero" size="small" disabled>{{ product.quantity }}</ion-button>
+        <ion-button size="small" (click)="increaseQuantity()">+</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
-          <!-- Cantidad -->
-          <div class="quantity-selector">
-            <ion-button fill="outline" size="small" (click)="decreaseQuantity()">–</ion-button>
-            <ion-button fill="clear" size="small" disabled>{{ product.quantity }}</ion-button>
-            <ion-button fill="outline" size="small" (click)="increaseQuantity()">+</ion-button>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-card class="payment-card">
+    <ion-card-content>
+      <div class="card-header">
+        <ion-icon name="car-sport"></ion-icon>
+        <ion-label class="label-title">Costos de envío</ion-label>
+      </div>
+
+    <ion-text class="card-price">
+      <strong>US ${{ shippingCost | number }}</strong>
+    </ion-text>
+    </ion-card-content>
   </ion-card>
 
-  <!-- Costos de envío -->
-  <ion-item lines="none">
-    <ion-icon name="car-outline" slot="start"></ion-icon>
-    <ion-label class="label-bold">Costos de envío</ion-label>
-    <ion-text slot="end"><strong>ARG ${{ shippingCost | number }}</strong></ion-text>
-  </ion-item>
-  <!-- Código postal -->
   <ion-item>
-    <ion-label position="stacked">Código Postal</ion-label>
-    <ion-input placeholder="Escribe tu CP"></ion-input>
-    <ion-icon slot="end" name="mail-outline"></ion-icon>
+    <ion-label position="floating">Código Postal</ion-label>
+    <ion-input [(ngModel)]="postalCode" inputmode="numeric" maxlength="10"
+      (ionInput)="validateNumber('postalCode')"></ion-input>
+    <ion-icon name="mail" slot="end"></ion-icon>
   </ion-item>
 
+  <ion-text color="danger" *ngIf="invalid.postalCode">
+    Solo se permiten números
+  </ion-text>
 
-  <ion-list>
-    <ion-item>
-      <ion-input label-placement="stacked" label="Código Postal" placeholder="">
-        <ion-icon slot="start" aria-hidden="true"></ion-icon>
-          <ion-icon slot="end" name="mail-outline" aria-hidden="true"></ion-icon>
-      </ion-input>
-    </ion-item>
-  </ion-list>
-
-
-  <!-- Subtotal -->
   <ion-item lines="none">
-    <ion-label>Subtotal</ion-label>
-    <ion-text slot="end">ARG ${{ subtotal | number }}</ion-text>
+    <ion-label>Subtotal <br /></ion-label> 
+    <ion-text slot="end">US ${{ subtotal | number }}</ion-text>
   </ion-item>
 
-  <!-- Cupón -->
   <ion-item>
-    <ion-label>Agregar código de cupon</ion-label>
-    <ion-icon name="pricetag-outline" slot="end"></ion-icon>
+    <ion-label position="floating">Código de cupón</ion-label>
+      <ion-input [(ngModel)]="couponCode" inputmode="numeric" maxlength="10"
+      (ionInput)="validateNumber('couponCode')" ></ion-input>
+      <ion-icon name="ticket" slot="end"></ion-icon>
   </ion-item>
 
-  <ion-note class="note">Esta opción es solo para <u>cuentas premium</u>.</ion-note>
+  <ion-text color="danger" *ngIf="invalid.couponCode">
+    Solo se permiten números
+  </ion-text>
+  <ion-note class="note">Esta opción es solo para <a [routerLink]="['/premium']"><u>cuentas premium</u></a>
+  </ion-note>
 
-  <!-- Total -->
   <div class="total-section">
     <div><strong>TOTAL</strong></div>
-    <div><strong>ARG ${{ total | number }}</strong></div>
+    <div><strong>US ${{ total | number }}</strong></div>
   </div>
 
-  <ion-button expand="block" class="button">
-    CONFIRMAR COMPRA
-  </ion-button>
-
+  <div class="button-container">
+    <ion-button class="button" [routerLink]="['/credit-card']" [queryParams]="{ total: total }">
+      CONFIRMAR COMPRA
+    </ion-button>
+  </div>
 </ion-content>

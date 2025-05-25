@@ -8,26 +8,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchasePage implements OnInit {
     product = {
-    title: 'Sakura Cardcaptor',
-    edition: 'Edición Deluxe 09',
-    price: 12900,
+    title: 'Haikyu! 01',
+    edition: 'Viz Media Edition',
+    price: 9.14,
     quantity: 1,
     image: 'assets/manga-cover/fma.jpg',
+    visible: true,
     };
+
+    postalCode = '';
+    couponCode = '';
+
+    invalid = {
+      postalCode: false,
+      couponCode: false
+    };
+
+  validateNumber(field: keyof typeof this.invalid, isDate: boolean = false): void {
+    const value = this[field];
+    const regex = isDate ? /^[0-9/]*$/ : /^[0-9]*$/;
+
+    this.invalid[field] = !regex.test(value);
+  }
  
   constructor() { }
 
   ngOnInit() {
   }
 
-   shippingCost = 5900;
+  shippingCost = 23.45;
 
   get subtotal(): number {
-    return this.product.price * this.product.quantity;
+    return this.product.visible ? this.product.price * this.product.quantity : 0;
   }
 
   get total(): number {
-    return this.subtotal + this.shippingCost;
+    return this.product.visible ? this.subtotal + this.shippingCost : 0;
   }
 
   increaseQuantity(): void {
@@ -38,6 +54,10 @@ export class PurchasePage implements OnInit {
     if (this.product.quantity > 1) {
       this.product.quantity--;
     }
+  }
+
+  removeProduct(): void {
+  this.product.visible = false;
   }
 
 }

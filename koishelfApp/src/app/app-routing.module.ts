@@ -111,6 +111,10 @@ const routes: Routes = [
   {
     path: 'purchase',
     loadChildren: () => import('./pages/purchase/purchase.module').then( m => m.PurchasePageModule)
+  },
+  {
+    path: 'credit-card',
+    loadChildren: () => import('./pages/credit-card/credit-card.module').then( m => m.CreditCardPageModule)
   }
 
 ];
