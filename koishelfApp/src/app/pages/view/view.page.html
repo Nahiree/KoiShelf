@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Capítulo 16</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <div class="img-container">
+    <img [src]="currentImage" alt="página" class="center-img" />
+  </div>
+</ion-content>
+
+<!-- Botones de navegación -->
+<div class="nav-buttons-fixed">
+  <ion-button fill="clear" (click)="goToPrevious()" [disabled]="currentPage === 0">
+    <ion-icon name="arrow-back-circle" slot="start"></ion-icon>
+    PREVIOUS
+  </ion-button>
+
+  <ion-button fill="clear" (click)="goToNext()" [disabled]="currentPage === pages.length - 1">
+    NEXT
+    <ion-icon name="arrow-forward-circle" slot="end"></ion-icon>
+  </ion-button>
+</div>
+
+
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>

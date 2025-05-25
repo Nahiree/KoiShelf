@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
+
 
 @Component({
   selector: 'app-synopsis',
@@ -8,25 +10,45 @@ import { DatabaseService } from 'src/app/services/database.service';
   standalone: false,
 })
 export class SynopsisPage implements OnInit {
-  mangasypnosis: any;
-
-  constructor() { }
+   id: any; //variable para recibir el id
+  data: any; //variable para recibir toda la información del id
+  allMangas: any[] = []; // Todos los mangas de la base
+  similarMangas: any[] = []; // Mangas similares filtrados
+  suggestedMangas: any[] = [];
+  constructor(
+    public activatedRoute: ActivatedRoute,
+    public db: DatabaseService,
+    //public cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
-     this.mangasypnosis = {
-      title: 'Haikyū!!',
-      author: 'Haruichi Furudate',
-      synopsis: [
-      "Despues de ver en la televisión a un jugador del equipo Karasuno conocido como 'El Pequeño Gigante', Shoyo Hinata decidió dedicar su vida al voleibol a pesar de ser de baja estatura. Pero en su último torneo en secundaria, su equipo recibe una auténtica paliza por parte del equipo de Tobio Kageyama.",
-      "A pesar de la derrota, Hinata se une al equipo de voleibol de su instituto para así vengarse de Kageyama pero, para su sorpresa, Kageyama también está en el equipo. Así, dos antiguos rivales forman un equipo imbatible con el que buscan llegar al campeonato nacional."
-      ],
-      biography: `In 2008, Furudate wrote the one-shot King Kid, which received an honorable mention in the Jump Treasure Newcomer Manga Award. In 2010, Furudate debuted their first series in Weekly Shōnen Jump...`,
-      otherWorks: [
-        'assets/img/obra1.jpg',
-        'assets/img/obra2.jpg',
-        'assets/img/obra3.jpg'
-      ]
-    };
-  }
+    console.log('mangaID', this.activatedRoute.snapshot.paramMap.get('mangaId'));
+    this.id = this.activatedRoute.snapshot.paramMap.get('mangaId');
+    this.db.getDocumentById('manga', this.id)
+      .subscribe((res: any) => {
+        console.log('manga recuperado', res);
+        this.data = res;
+       //this.cdr.detectChanges();
+        console.log('genre array:', this.data.genre_demographic.genres);
+       console.log('genre array:', this.data.genre_demographic.demographic);
+       if(this.data?.genre_demographic?.genres && Array.isArray(this.data.genre_demographic.genres)) {
+          console.log('Array demographic:', this.data.genre_demographic.genres);
+        } else {
+  console.log('No está definido o no es un array');
+}
+    if (this.data.genre_demographic) {
+        const filters:  any[] = [
+          { field: 'genre_demographic.demographic', operator: '==', value: this.data.genre_demographic.demographic },
+          
+        ];
 
+        this.db.getCollectionByFilters('manga', filters).subscribe(results => {
+          this.suggestedMangas = results.filter(m => m.id !== this.id);
+          console.log('similares array:', this.suggestedMangas );
+        });
+      }
+       
+      })
+  }
+  
 }

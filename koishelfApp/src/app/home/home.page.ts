@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @Component({
   selector: 'app-home',
@@ -7,7 +11,10 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
+  constructor(private router: Router) {}
+  
 
-  constructor() {}
-
+  goToSearch() {
+    this.router.navigate(['./search']);
+  }
 }

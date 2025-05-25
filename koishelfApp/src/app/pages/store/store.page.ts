@@ -24,7 +24,6 @@ export class StorePage implements OnInit {
     alert("¡Hola! Este es un mensaje.");
   }
 
-  puntuacionDelUsuario: number = 0;
 
   fetchMangas(){
     this.db.fetchFirestoreCollection('manga')

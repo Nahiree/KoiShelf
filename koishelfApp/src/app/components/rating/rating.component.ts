@@ -12,11 +12,6 @@ export class RatingComponent  implements OnInit {
 
   ngOnInit() {}
   @Input() rating: number = 0;
-  @Output() ratingChange = new EventEmitter<number>();
 
-  rate(star: number) {
-    this.rating = star;
-    this.ratingChange.emit(this.rating);
-    console.log('Estrella seleccionada:', star);
-  }
+  
 }

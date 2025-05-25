@@ -12,6 +12,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { SharedModule } from './modules/shared/shared.module';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -21,7 +23,8 @@ import { SharedModule } from './modules/shared/shared.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     HttpClientModule, 
-    SharedModule  
+    SharedModule,
+    
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -30,6 +33,7 @@ import { SharedModule } from './modules/shared/shared.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
 
 
 

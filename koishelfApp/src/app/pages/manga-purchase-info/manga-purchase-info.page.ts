@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-manga-purchase-info',
@@ -7,27 +9,23 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class MangaPurchaseInfoPage implements OnInit {
-   manga = {
-    title: 'Haikyuu! 01',
-    author: 'Haruichi Furudate',
-    price: 9.14,
-    synopsis: `Shoyo Hinata is out to prove that in volleyball you don't need to be tall to fly!`,
-    image: 'assets/manga-cover/fma.jpg',
-    pages: 129,
-    language: 'Inglés',
-    publisher: 'Viz Media',
-    volume: 'Volumen 1',
-    format: 'Tamaño tankoubon con sobrecubierta',
-    similar: [
-      'assets/mangas/haikyuu02.jpg',
-      'assets/mangas/haikyuu22.jpg',
-      'assets/mangas/haikyuu03.jpg',
-    ]
-  };
-  constructor() { }
+   id: any; //variable para recibir el id
+  data: any; //variable para recibir toda la información del id
+  constructor(
+    public activatedRoute: ActivatedRoute,
+    public db: DatabaseService,
+    //public cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
+    console.log('mangaID', this.activatedRoute.snapshot.paramMap.get('mangaId'));
+    this.id = this.activatedRoute.snapshot.paramMap.get('mangaId');
+    this.db.getDocumentById('manga', this.id)
+      .subscribe((res: any) => {
+        console.log('manga recuperado', res);
+        this.data = res;
+       //this.cdr.detectChanges();
+      })
   }
-  puntuacionDelUsuario: number = 3;
 
 }

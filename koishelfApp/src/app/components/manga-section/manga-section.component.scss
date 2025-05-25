@@ -1,0 +1,38 @@
+ion-card {
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  margin-right: 4px;
+  margin-left: 4px;
+  width: 125px;
+  
+  
+  
+}
+
+img {
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+ion-card-title{
+  color: #E0DCC5;
+  font-family: "Roboto-Regular", sans-serif !important;
+  margin-top: -5px;
+  font-size: 1.2em;
+  text-align: start;
+  padding-bottom: 0%;
+}
+ion-card-content{
+  margin-bottom: -10px;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 160px; 
+}

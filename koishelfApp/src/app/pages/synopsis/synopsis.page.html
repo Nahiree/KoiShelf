@@ -8,15 +8,25 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <img alt="banner" src="assets/banner/haikyuub.jpg" class="banner"/>
+  <img src="manga.banner" alt="imagen manga">
 
-  <h1 class="title">{{ mangasypnosis.title }}</h1>
-  <h4 class="author">De {{ mangasypnosis.author }}</h4>
+  <h1 class="title">{{ data?.id }}</h1>
+  <h4 class="author">De {{ data?.author }}</h4>
 
-  <p class="description">{{ mangasypnosis.synopsis }}</p>
+  <p class="description">{{ data?.synopsis }}</p>
 
-  <h4 class="subtitle">Sobre {{ mangasypnosis.author }}</h4>
-  <p class="description">{{ mangasypnosis.biography }}</p>
+  <h4 class="subtitle">Sobre {{ data?.author }}</h4>
+  <p class="description">{{ data?.['author-info'] }}</p>
 
-  <h6 class="subtitle">Otros trabajos de {{ mangasypnosis.author }}</h6>
+  <h6 class="subtitle">Otros mangas de {{ data?.genre_demographic.demographic}}</h6>
+  <ion-row>
+    <ion-col *ngFor="let manga of suggestedMangas">
+      <ion-card [routerLink]="['/manga-purchase-info', manga.id]">
+        <ion-card-header>
+          <img src="{{ manga.banner}}" alt="imagen manga">
+          <ion-card-title>{{ manga. id}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
