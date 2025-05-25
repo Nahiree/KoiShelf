@@ -127,7 +127,15 @@ const routes: Routes = [
   {
     path: 'credit-card',
     loadChildren: () => import('./pages/credit-card/credit-card.module').then( m => m.CreditCardPageModule)
+  },  {
+    path: 'record',
+    loadChildren: () => import('./pages/record/record.module').then( m => m.RecordPageModule)
+  },
+  {
+    path: 'manga-follow',
+    loadChildren: () => import('./pages/manga-follow/manga-follow.module').then( m => m.MangaFollowPageModule)
   }
+
 
 
 ];

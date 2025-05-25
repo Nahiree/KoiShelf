@@ -19,15 +19,25 @@ export class LogGenrePage implements OnInit {
   constructor(
     private auth: AuthService,
     private db: DatabaseService
-  ) { }
+  ) { 
+     console.log('Constructor de LogGenrePage');
+  }
   
   async ngOnInit() {
-    const profile = localStorage.getItem('profile');
-    if (profile) {
-      const user = JSON.parse(profile);
-      this.userId = user.id;
-    }
+  const profile = localStorage.getItem('profile');
+  if (profile) {
+    const user = JSON.parse(profile);
+    this.userId = user.id;
+    console.log("hola");
+    // Cargar géneros guardados desde Firestore
+    this.db.getDocumentById('users', this.userId).subscribe(userDoc => {
+      if (userDoc && userDoc.genres) {
+        this.selectedGenres = userDoc?.genres;
+        console.log(userDoc?.genres)
+      }
+    });
   }
+}
 
   toggleGenre(genre: string) {
     const index = this.selectedGenres.indexOf(genre);

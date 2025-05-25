@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Mangas que sigues</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+        <div class="card-grid">
+  <ion-card *ngFor="let manga of mangas">
+    <img alt="manga-cover" [src]="manga.cover" />
+    <ion-card-content>
+      <ion-card-subtitle class="ellipsis">
+  {{ manga.id }}
+</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>
