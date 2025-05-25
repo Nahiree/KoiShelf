@@ -46,7 +46,9 @@ ion-card.comentario{
   border: 2px solid var(--ion-color-secondary);
   border-radius: 12px;
 }
-
+ion-list{
+  --background: #151F25 !important;
+}
 p{
   color: var(--ion-color-light);
 }
@@ -101,6 +103,7 @@ p{
 .info-header {
   padding: 16px;
   padding-bottom: 4px;
+  --background: #151F25 !important;
 }
 
 .info-title {
@@ -151,7 +154,7 @@ p{
 .product-card {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
 .product-card > div:first-child {
@@ -159,12 +162,25 @@ p{
 }
 
 .cover {
-  width: 150px;
+  width: 140px;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: -5px;
 }
 
 .product-card > div:last-child {
   flex: 1;
+}
+ion-card {
+  --background: #151F25 !important; /* color oscuro */
+  color: #E0DCC5 !important; /* texto claro */
+}
+.info-header {
+  background-color: #151F25; /* color oscuro que quieras */
+  padding: 10px;
+  border-radius: 6px 6px 0 0; /* redondear sólo la parte superior si quieres */
+  color: #E0DCC5; /* texto claro para contraste */
 }

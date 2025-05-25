@@ -16,7 +16,7 @@ ion-chip {
 
 ion-item {
   border-radius: 8px;
-  margin-bottom: 10px;
+
   color: var(--ion-color-tertiary);
   --background: #151F25 !important;
   color: #E0DCC5 !important;
@@ -80,4 +80,12 @@ ion-list.lista {
   --background: #151F25 !important;
   height: 100%;
   display: block;
+}
+ion-list {
+  --border-width: 0;
+  
+  border-top: none !important;
+  border-bottom: none !important;
+  margin-top: 0; // por si hay margen
+  padding-top: 0; // por si hay padding
 }

@@ -13,27 +13,15 @@
     <ion-row>
       <ion-col>
         <div class="prueba">
-          <ion-searchbar [routerLink]="['/search']" placeholder="Busca tus títulos favoritos" ></ion-searchbar>
+          <ion-searchbar placeholder="Buscar tus títulos favoritos" (ionInput)="handleSearch($event)"></ion-searchbar>
         </div>
-         <ion-accordion-group>
-          <ion-accordion value="first">
-            <ion-item slot="header">
-              <ion-label>
-                <h6>Filtrar</h6>
-              </ion-label>
-            </ion-item>
-            <ion-checkbox class="ion-padding" slot="content"><p>Género</p></ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content"><p>Autor</p></ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content"><p>Demografía</p></ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content"><p>Editorial</p></ion-checkbox>
-          </ion-accordion>
-        </ion-accordion-group>
+         
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="4" *ngFor="let manga of mangas">
           <ion-card [routerLink]="['/manga-purchase-info', manga.id]">
-            <img alt="manga-cover" src= "{{ manga.banner}}"/>
+            <img alt="manga-cover" src= "{{ manga.cover}}"/>
             <ion-card-content>
               <ion-card-subtitle><p>{{ manga.id}}</p></ion-card-subtitle>
               <app-rating [rating]="manga.rating"></app-rating>
