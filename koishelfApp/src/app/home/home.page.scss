@@ -1,30 +1,95 @@
-*{
-  background-color: #151F25;
-}
-#container {
-  text-align: center;
+ion-content{
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
 
-  position: absolute;
+}
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
+
+.searchbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+ion-searchbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+  border: solid #f44336 2px;
+  border-radius: 8px;
+  width: 96%;
+  box-shadow: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+ion-header{
+  box-shadow: none;
+  ion-title{
+    font-family: 'Atkinson-Bold', sans-serif !important;
+    font-size: 1.8em;
+  }
+  ion-icon{
+    font-size: 25px;
+    color: #E0DCC5;
+  }
+}
+ion-card-title{
+    color: #E0DCC5;
+    font-family: 'Atkinson-Bold', sans-serif !important;
+    font-size: 1.2em;
+    margin: 0;
+    margin-top: 5px;
+ 
+    display: inline-block !important;
+  width: auto !important;
+  max-width: 70%;
+}
+app-news{
+  margin-top:  10px;
+  margin-bottom:  10px;
+}
+app-manga-section{
+  
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px !important;
+
+}
+
+  ion-slide {
+    
+    display: flex;
+    justify-content: start;
+  }
+.si {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+  a {
+    color: #E0DCC5 !important;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0;
+  }
+ion-content::part(scroll) {
+  padding-bottom: 200px; 
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
   left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  width: 100%;
+  height: 70px; 
+  z-index: 1000;
+  background-color: #151F25;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }

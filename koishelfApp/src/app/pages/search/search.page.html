@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Buscador</ion-title>
+</ion-toolbar>
+  <ion-toolbar>
+  <div class="searchbar-wrapper">
+    <ion-searchbar (ionInput)="handleSearch($event)"></ion-searchbar>
+
+
+  </div>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+        <ion-accordion-group>
+          <ion-accordion value="first">
+            <ion-item class="accordion-header" slot="header">
+              <ion-label>Demografía/Géneros</ion-label>
+              
+            </ion-item>
+            <ion-checkbox class="ion-padding" slot="content">Shonen</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Seinen</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Shoujo</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Josei</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Comedia</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Romance</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Música</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Drama</ion-checkbox>
+            <ion-checkbox class="ion-padding" slot="content">Deporte</ion-checkbox>
+          </ion-accordion>
+        </ion-accordion-group>
+        <div class="line"></div>
+        <div class="card-grid">
+  <ion-card *ngFor="let manga of mangas">
+    <img alt="manga-cover" [src]="manga.cover" />
+    <ion-card-content>
+      <ion-card-subtitle class="ellipsis">
+  {{ manga.id }}
+</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>

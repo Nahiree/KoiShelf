@@ -41,8 +41,6 @@ validateNumber(field: 'cardNumber' | 'expiration' | 'cvs', isDate: boolean = fal
       expiration: this.expiration,
       cvs: this.cvs,
     });
-    console.log('Monto pagado:', this.total);
-    // Aquí podés hacer validación y enviar la info a backend o confirmar el pago
-  }
-
+    console.log('Monto pagado:', this.total)
+   }
 }
