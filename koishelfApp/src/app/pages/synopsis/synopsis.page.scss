@@ -2,7 +2,10 @@ ion-content {
  --background: var(--ion-color-primary);
 --color: var(--ion-color-tertiary);
 }
-
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
 .title {
   font-size: 24px;
   font-weight: bold;
@@ -27,10 +30,11 @@ ion-content {
   margin-top: 20px;
 }
 
-.banner{
+.img{
     object-fit: cover;
     display: block;
     border-radius: 8px;
+    height: 400px;
 }
 
 
@@ -54,3 +58,35 @@ ion-card {
   ion-card-title {
     font-size: 14px;
   }
+
+  .banner-image {
+  width: 100%;
+  height: 150px; // o el alto que prefieras
+  object-fit: cover; // para que se recorte bien y no se deforme
+  border-radius: 16px; // ajusta el valor como gustes
+  margin-bottom: 1rem; // opcional, para dar espacio debajo del banner
+}
+ion-card {
+  height: 100%;
+  border-radius: 12px;
+
+  img {
+    height: 150px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  ion-card-title {
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: var(--ion-color-tertiary);
+  }
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 160px; 
+}

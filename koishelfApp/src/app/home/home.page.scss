@@ -93,3 +93,16 @@ ion-content::part(scroll) {
   background-color: #151F25;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
+
+
+swiper-container {
+  display: block;
+}
+
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+}
+

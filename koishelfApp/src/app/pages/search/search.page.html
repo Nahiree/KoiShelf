@@ -16,26 +16,61 @@
 
 <ion-content [fullscreen]="true">
         <ion-accordion-group>
-          <ion-accordion value="first">
-            <ion-item class="accordion-header" slot="header">
-              <ion-label>Demografía/Géneros</ion-label>
-              
-            </ion-item>
-            <ion-checkbox class="ion-padding" slot="content">Shonen</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Seinen</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Shoujo</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Josei</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Comedia</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Romance</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Música</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Drama</ion-checkbox>
-            <ion-checkbox class="ion-padding" slot="content">Deporte</ion-checkbox>
-          </ion-accordion>
-        </ion-accordion-group>
+  <ion-accordion value="first">
+    <ion-item class="accordion-header" slot="header">
+      <ion-label>Demografía / Géneros</ion-label>
+    </ion-item>
+    
+    <div slot="content" class="ion-padding">
+      <!-- Demografías -->
+      <ion-checkbox value="Shonen" (ionChange)="toggleDemographic($event)">Shonen</ion-checkbox>
+      <ion-checkbox value="Seinen" (ionChange)="toggleDemographic($event)">Seinen</ion-checkbox>
+      <ion-checkbox value="Shojo" (ionChange)="toggleDemographic($event)">Shojo</ion-checkbox>
+      <ion-checkbox value="Josei" (ionChange)="toggleDemographic($event)">Josei</ion-checkbox>
+
+      <!-- Géneros -->
+      <ion-checkbox value="Comedia" (ionChange)="toggleGenre($event)">Comedia</ion-checkbox>
+      <ion-checkbox value="Romance" (ionChange)="toggleGenre($event)">Romance</ion-checkbox>
+      <ion-checkbox value="Acción" (ionChange)="toggleGenre($event)">Acción</ion-checkbox>
+      <ion-checkbox value="Aventura" (ionChange)="toggleGenre($event)">Aventura</ion-checkbox>
+      <ion-checkbox value="Fantasía" (ionChange)="toggleGenre($event)">Fantasía</ion-checkbox>
+      <ion-checkbox value="Drama" (ionChange)="toggleGenre($event)">Drama</ion-checkbox>
+      <ion-checkbox value="Slice of Life" (ionChange)="toggleGenre($event)">Slice of Life</ion-checkbox>
+      <ion-checkbox value="Ciencia ficción" (ionChange)="toggleGenre($event)">Ciencia ficción</ion-checkbox>
+      <ion-checkbox value="Misterio" (ionChange)="toggleGenre($event)">Misterio</ion-checkbox>
+      <ion-checkbox value="Thriller" (ionChange)="toggleGenre($event)">Thriller</ion-checkbox>
+      <ion-checkbox value="Psicológico" (ionChange)="toggleGenre($event)">Psicológico</ion-checkbox>
+      <ion-checkbox value="Sobrenatural" (ionChange)="toggleGenre($event)">Sobrenatural</ion-checkbox>
+      <ion-checkbox value="Terror" (ionChange)="toggleGenre($event)">Terror</ion-checkbox>
+      <ion-checkbox value="Shonen Ai" (ionChange)="toggleGenre($event)">Shonen Ai</ion-checkbox>
+      <ion-checkbox value="BL" (ionChange)="toggleGenre($event)">BL</ion-checkbox>
+      <ion-checkbox value="GL" (ionChange)="toggleGenre($event)">GL</ion-checkbox>
+      <ion-checkbox value="Yuri" (ionChange)="toggleGenre($event)">Yuri</ion-checkbox>
+      <ion-checkbox value="Música" (ionChange)="toggleGenre($event)">Música</ion-checkbox>
+      <ion-checkbox value="Deportes" (ionChange)="toggleGenre($event)">Deportes</ion-checkbox>
+      <ion-checkbox value="Spocon" (ionChange)="toggleGenre($event)">Spocon</ion-checkbox>
+      <ion-checkbox value="Moda" (ionChange)="toggleGenre($event)">Moda</ion-checkbox>
+      <ion-checkbox value="Kemono" (ionChange)="toggleGenre($event)">Kemono</ion-checkbox>
+      <ion-checkbox value="Fantasía Oscura" (ionChange)="toggleGenre($event)">Fantasía Oscura</ion-checkbox>
+      <ion-checkbox value="Policial" (ionChange)="toggleGenre($event)">Policial</ion-checkbox>
+      <ion-checkbox value="Maho shojo" (ionChange)="toggleGenre($event)">Maho shojo</ion-checkbox>
+      <ion-checkbox value="Comedia Oscura" (ionChange)="toggleGenre($event)">Comedia Oscura</ion-checkbox>
+      <ion-checkbox value="Suspenso" (ionChange)="toggleGenre($event)">Suspenso</ion-checkbox>
+      <ion-checkbox value="Artes Marciales" (ionChange)="toggleGenre($event)">Artes Marciales</ion-checkbox>
+      <ion-checkbox value="Mecha" (ionChange)="toggleGenre($event)">Mecha</ion-checkbox>
+      <ion-checkbox value="Horror" (ionChange)="toggleGenre($event)">Horror</ion-checkbox>
+      <ion-checkbox value="Histórico" (ionChange)="toggleGenre($event)">Histórico</ion-checkbox>
+      <ion-checkbox value="Vida Escolar" (ionChange)="toggleGenre($event)">Vida Escolar</ion-checkbox>
+
+    </div>
+
+  </ion-accordion>
+</ion-accordion-group>
+
         <div class="line"></div>
         <div class="card-grid">
   <ion-card *ngFor="let manga of mangas">
-    <img alt="manga-cover" [src]="manga.cover" />
+    <img alt="manga-cover" [src]="manga.cover" [routerLink]="['/manga-detail', manga.id]"/>
     <ion-card-content>
       <ion-card-subtitle class="ellipsis">
   {{ manga.id }}

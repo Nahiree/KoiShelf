@@ -13,7 +13,10 @@ ion-button.button {
   --background: var(--ion-color-secondary);
 
 }
-
+ion-toolbar {
+  --background: #151F25 !important;
+  color: #E0DCC5 !important;
+}
 ion-item{
 --background: var(--ion-color-primary);
 --color: var(--ion-color-tertiary);
@@ -23,40 +26,66 @@ h6.author{
   color: var(--ion-color-light);
 }
 
-.manga-card {
+.manga-card-wrapper {
   display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.manga-card {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 16px;
   margin-bottom: 1rem;
+  
 
   .cover {
     width: 130px;
     height: auto;
     border-radius: 8px;
+    flex-shrink: 0;
+    margin-left: 10%;
+    margin-top: 5%;
   }
+
   .info {
-    flex: 1;
-    h2 {
-      margin: 0;
-      font-size: 1.4rem;
-    }
-    p {
-      margin: 4px 0 10px;
-    }
-    .tags {
-      margin-top: 12px;
-      padding: 12px;
-    }
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
+
+.tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .icon-group {
   display: flex;
   align-items: center;
   gap: 16px; // O el valor que prefieras (ej: 24px, 31px, etc.)
 }
-
+.actions{
+  margin-top: 10px;
+}
+.chapter-list {
+  width: 100%;
+  margin-top: 1rem;
+}
 .chapter-list {
   margin-top: 1rem;
+  --background: #151F25 !important;
 
   ion-item {
     border-bottom: 1px var(--ion-color-tertiary);
@@ -75,10 +104,35 @@ h6.author{
       font-size: 0.85rem;
     }
 
-    ion-avatar img {
-      width: 40px;
-      height: 40px;
-    }
+    ion-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px; // opcional, el avatar ya es redondo por defecto
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; // este es el que realmente aplica el borde redondeado a la imagen
+  }
+}
   }
 }
 
+.chapter-list-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.chapter-list {
+  width: 100%;
+  max-width: 500px;
+}
+ion-list.chapter-list {
+  --border-width: 0;
+  
+  border-top: none !important;
+  border-bottom: none !important;
+  margin-top: 0; // por si hay margen
+  padding-top: 0; // por si hay padding
+}
