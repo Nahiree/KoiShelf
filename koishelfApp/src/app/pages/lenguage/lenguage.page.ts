@@ -33,15 +33,21 @@ export class LenguagePage implements OnInit {
         const user = JSON.parse(profile);
         this.userId = user.id;
         if (this.userId) {
-          try {
-            const userData = await this.db.getDocumentById('users', this.userId) as UserProfile;
-            if (userData.lenguage) {
-              this.selectedLanguage = userData.lenguage;
+          this.db.getDocumentById('users', this.userId).subscribe({
+            next: (userData: UserProfile) => {
+              console.log("userData completo:", userData);
+              if (userData?.lenguage?.length) {
+                this.selectedLanguage = userData.lenguage;
+                console.log("Idiomas guardados:", this.selectedLanguage);
+              } else {
+                console.log("No hay idiomas guardados.");
+              }
+            },
+            error: (error) => {
+              console.error('Error al cargar idiomas guardados:', error);
+              this.presentToast('Error al cargar tus idiomas. Intenta de nuevo.', 'danger');
             }
-          } catch (error) {
-            console.error('Error al cargar géneros guardados:', error);
-            this.presentToast('Error al cargar tus géneros. Intenta de nuevo.', 'danger');
-          }
+          });
         }
       }
     }
@@ -62,16 +68,16 @@ export class LenguagePage implements OnInit {
       }
   
       const data = {
-        lenguage: this.selectedLanguage // O 'genre' si lo cambiaste para Firebase
+        lenguage: this.selectedLanguage 
       };
   
       try {
         await this.db.updateFireStoreDocument('users', this.userId, data);
-        console.log('Géneros guardados con éxito');
+        console.log('Idiomas guardados con éxito');
         this.presentToast('¡Idiomas guardados con éxito!', 'success'); // Tostadita de éxito
       } catch (err) {
-        console.error('Error al guardar géneros:', err);
-        this.presentToast('Error al guardar géneros. Intenta de nuevo.', 'danger'); // Tostadita de error
+        console.error('Error al guardar idiomas:', err);
+        this.presentToast('Error al guardar idiomas. Intenta de nuevo.', 'danger'); // Tostadita de error
       }
     }
   
