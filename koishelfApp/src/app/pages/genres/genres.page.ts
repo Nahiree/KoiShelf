@@ -29,20 +29,28 @@ export class GenresPage implements OnInit {
 
   async ngOnInit() {
     const profile = localStorage.getItem('profile');
+    console.log("en OnInit de");
     if (profile) {
       const user = JSON.parse(profile);
       this.userId = user.id;
+      console.log("Usuario encontardo " ,this.userId);
       if (this.userId) {
-        try {
-          const userData = await this.db.getDocumentById('users', this.userId) as UserProfile;
-          if (userData.genres) {
-            this.selectedGenres = userData.genres;
-          }
-        } catch (error) {
-          console.error('Error al cargar géneros guardados:', error);
-          this.presentToast('Error al cargar tus géneros. Intenta de nuevo.', 'danger');
-        }
+  this.db.getDocumentById('users', this.userId).subscribe({
+    next: (userData: UserProfile) => {
+      console.log("userData completo:", userData);
+      if (userData?.genres?.length) {
+        this.selectedGenres = userData.genres;
+        console.log("Géneros guardados:", this.selectedGenres);
+      } else {
+        console.log("No hay géneros guardados.");
       }
+    },
+    error: (error) => {
+      console.error('Error al cargar géneros guardados:', error);
+      this.presentToast('Error al cargar tus géneros. Intenta de nuevo.', 'danger');
+    }
+  });
+}
     }
   }
   toggleGenre(genre: string) {
