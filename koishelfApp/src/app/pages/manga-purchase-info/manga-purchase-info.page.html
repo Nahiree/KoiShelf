@@ -19,9 +19,10 @@
         <h6 class="author">{{ data?.author }}</h6>
         <h4 class="price">US$ {{ data?.price }}</h4>
         <div class="actions">
-          <ion-button class="button" [routerLink]="['/purchase']">
-            Comprar
-          </ion-button>
+          <ion-button class="button" [routerLink]="['/purchase', data?.id]">
+  Comprar
+</ion-button>
+
           <ion-icon name="cart"></ion-icon>
         </div>
       </div>

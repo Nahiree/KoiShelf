@@ -1,42 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-     <ion-buttons slot="start">
-      <ion-back-button default-href="#"></ion-back-button>
+    <ion-buttons slot="start">
+       <ion-back-button defaultHref="/" color="light"></ion-back-button>
     </ion-buttons>
-    <ion-title color="light">purchase</ion-title>
+    <ion-title color="light">Compra</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
- <ion-grid class="product-container" *ngIf="product.visible">
-  <ion-row class="product-row">
-    <ion-col size="4" class="img-col">
-      <img [src]="product.image" class="product-img" />
-    </ion-col>
+<ion-content *ngIf="manga">
+  <ion-grid class="product-container">
+    <ion-row class="product-row">
+      <ion-col size="4" class="img-col">
+        <img [src]="manga.cover" class="product-img" />
+      </ion-col>
 
-    <ion-col size="8" class="info-col">
-      <div class="product-info">
-        <div>
-          <strong>{{ product.title }}</strong><br />
-          <span>{{ product.edition }}</span>
-        </div>
-
-        <div class="price-delete">
-          <div class="price"> US<br />
-            <strong>${{ product.price | number }}</strong>
+      <ion-col size="8" class="info-col">
+        <div class="product-info">
+          <div>
+            <strong>{{ manga.id }}</strong><br />
+            <span>{{ manga.publisher }}</span>
           </div>
-          <ion-icon name="trash-outline" class="trash-icon" (click)="removeProduct()"></ion-icon>
-        </div>
-      </div>
 
-      <div class="quantity-selector">
-        <ion-button class="cantidad" size="small" (click)="decreaseQuantity()">–</ion-button>
-        <ion-button class="numero" size="small" disabled>{{ product.quantity }}</ion-button>
-        <ion-button size="small" (click)="increaseQuantity()">+</ion-button>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+          <div class="price-delete">
+            <div class="price">
+              US<br />
+              <strong>${{ manga.price | number }}</strong>
+            </div>
+            <ion-icon
+              name="trash-outline"
+              class="trash-icon"
+              (click)="removeManga()"
+            ></ion-icon>
+          </div>
+        </div>
+
+        <div class="quantity-selector">
+          <ion-button  (click)="decreaseQuantity()">–</ion-button>
+          <ion-button  disabled>{{ quantity }}</ion-button>
+          <ion-button  (click)="increaseQuantity()">+</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-card class="payment-card">
     <ion-card-content>
@@ -44,10 +49,9 @@
         <ion-icon name="car-sport"></ion-icon>
         <ion-label class="label-title">Costos de envío</ion-label>
       </div>
-
-    <ion-text class="card-price">
-      <strong>US ${{ shippingCost | number }}</strong>
-    </ion-text>
+      <ion-text class="card-price">
+        <strong>US ${{ shippingCost | number }}</strong>
+      </ion-text>
     </ion-card-content>
   </ion-card>
 
@@ -57,28 +61,28 @@
       (ionInput)="validateNumber('postalCode')"></ion-input>
     <ion-icon name="mail" slot="end"></ion-icon>
   </ion-item>
-
   <ion-text color="danger" *ngIf="invalid.postalCode">
     Solo se permiten números
   </ion-text>
 
-  <ion-item lines="none">
-    <ion-label>Subtotal <br /></ion-label> 
-    <ion-text slot="end">US ${{ subtotal | number }}</ion-text>
-  </ion-item>
-
   <ion-item>
     <ion-label position="floating">Código de cupón</ion-label>
-      <ion-input [(ngModel)]="couponCode" inputmode="numeric" maxlength="10"
-      (ionInput)="validateNumber('couponCode')" ></ion-input>
-      <ion-icon name="ticket" slot="end"></ion-icon>
+    <ion-input [(ngModel)]="couponCode" inputmode="numeric" maxlength="10"
+      (ionInput)="validateNumber('couponCode')"></ion-input>
+    <ion-icon name="ticket" slot="end"></ion-icon>
   </ion-item>
-
   <ion-text color="danger" *ngIf="invalid.couponCode">
     Solo se permiten números
   </ion-text>
-  <ion-note class="note">Esta opción es solo para <a [routerLink]="['/premium']"><u>cuentas premium</u></a>
+  <ion-note class="note">
+    Esta opción es solo para
+    <a [routerLink]="['/premium']"><u>cuentas premium</u></a>
   </ion-note>
+
+  <ion-item lines="none" class="sub">
+    <ion-label>Subtotal</ion-label>
+    <ion-text slot="end">US ${{ subtotal | number }}</ion-text>
+  </ion-item>
 
   <div class="total-section">
     <div><strong>TOTAL</strong></div>
@@ -86,8 +90,12 @@
   </div>
 
   <div class="button-container">
-    <ion-button class="button" [routerLink]="['/credit-card']" [queryParams]="{ total: total }">
-      CONFIRMAR COMPRA
-    </ion-button>
+    <ion-button
+  class="button"
+  [routerLink]="['/credit-card']"
+  [queryParams]="{ total: total }"
+>
+  CONFIRMAR COMPRA
+</ion-button>
   </div>
 </ion-content>

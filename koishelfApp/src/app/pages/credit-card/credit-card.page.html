@@ -21,6 +21,7 @@
       </div>
 
     <ion-text class="card-price">
+      <p>TOTAL</p>
       <strong>{{ total | currency:'USD':'symbol':'1.2-2' }}</strong>
     </ion-text>
     </ion-card-content>
@@ -66,8 +67,9 @@
   </ion-list>
 
   <div class="ion-text-center ion-margin-top">
-    <ion-button expand="block" (click)="submitPayment()">
-      Añadir
-    </ion-button>
+    <ion-button expand="block" (click)="submitPayment()" [disabled]="!isFormValid()">
+  COMPRAR
+</ion-button>
+
   </div>
 </ion-content>

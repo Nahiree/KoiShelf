@@ -7,15 +7,16 @@
   </ion-toolbar>
   <ion-toolbar>
     <div class="searchbar-wrapper">
-      <ion-searchbar></ion-searchbar>
+      <ion-searchbar class="white-text-searchbar" (ionInput)="onSearchInput($event)"></ion-searchbar>
+
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-segment [(ngModel)]="segmentValue" class="custom-segment">
+  <ion-segment [(ngModel)]="segmentValue" class="custom-segment" (ionChange)="segmentChanged()">
     <ion-segment-button value="favoritos">
-      <ion-label>TODOS</ion-label>
+      <ion-label>GUARDADOS</ion-label>
     </ion-segment-button>
     <ion-segment-button value="recientes">
       <ion-label>FAVORITOS</ion-label>
@@ -23,19 +24,18 @@
   </ion-segment>
 
   <div class="card-grid">
-  <ion-card *ngFor="let manga of (segmentValue==='favoritos'?mangasFavoritos:mangasHeart)" 
-            class="manga-card"
-            (click)="goToMangaDetail(manga.id)"> <!-- AQUÍ -->
-    <img alt="manga-cover" [src]="manga.cover" />
-    <ion-card-content>
-      <ion-card-subtitle class="ellipsis">
-        {{ manga.id }}
-      </ion-card-subtitle>
-      <div class="progress-bar"></div>
-    </ion-card-content>
-  </ion-card>
-</div>
-
+    <ion-card *ngFor="let manga of filteredMangas"
+              class="manga-card"
+              (click)="goToMangaDetail(manga.id)">
+      <img alt="manga-cover" [src]="manga.cover" />
+      <ion-card-content>
+        <ion-card-subtitle class="ellipsis">
+          {{ manga.id }}
+        </ion-card-subtitle>
+        <div class="progress-bar"></div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
 
 <ion-footer>

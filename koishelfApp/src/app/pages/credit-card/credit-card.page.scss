@@ -55,4 +55,20 @@ ion-icon{
   font-weight: bold;
   margin-top: 8px;
   color: var(--ion-color-light);
+
+  p{
+    font-size: 1.8em;
+  }
+}
+
+button{
+  width: 120px;
+}
+
+.custom-toast {
+  --background: #28a745; // opcional: fuerza el color verde
+  --color: white;        // texto blanco
+  font-size: 18px;                   // 👈 y el tamaño de fuente
+  text-align: center;
+  font-family: 'Atkinson-Bold', sans-serif !important;
 }

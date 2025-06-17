@@ -109,9 +109,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/mangateca-edicion/mangateca-edicion.module').then( m => m.MangatecaEdicionPageModule)
   },
   {
-    path: 'purchase',
-    loadChildren: () => import('./pages/purchase/purchase.module').then( m => m.PurchasePageModule)
-  },
+  path: 'purchase/:id',
+  loadChildren: () => import('./pages/purchase/purchase.module').then(m => m.PurchasePageModule)
+},
+
   {
     path: 'lenguage',
     loadChildren: () => import('./pages/lenguage/lenguage.module').then( m => m.LenguagePageModule)
@@ -127,7 +128,8 @@ const routes: Routes = [
   {
     path: 'credit-card',
     loadChildren: () => import('./pages/credit-card/credit-card.module').then( m => m.CreditCardPageModule)
-  },  {
+  },
+  {
     path: 'record',
     loadChildren: () => import('./pages/record/record.module').then( m => m.RecordPageModule)
   },

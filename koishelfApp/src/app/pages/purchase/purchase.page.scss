@@ -44,8 +44,13 @@ ion-item{
   margin: 16px;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 1.8em;
   color: var(--ion-color-tertiary);
+  font-family: 'Atkinson-Bold', sans-serif !important;
+  
+}
+.sub{
+  font-size: 1.3em;
 }
 
 .confirm-btn {
@@ -88,6 +93,8 @@ ion-item{
   border-radius: 12px;
   color: var(--ion-color-light);
   margin-bottom: 12px;
+  width: 95%;
+  padding-top: 6%;
 }
 
 .product-row {
@@ -101,7 +108,7 @@ ion-item{
 
 .product-img {
   width: 100%;
-  max-width: 80px;
+  max-width: 130px;
   border-radius: 8px;
 }
 
@@ -115,6 +122,13 @@ ion-item{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding-left: 20px;
+
+  strong{
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-family: 'Atkinson-Bold', sans-serif !important;
+  }
 }
 
 .price-delete {
@@ -133,10 +147,20 @@ ion-item{
   display: flex;
   gap: 4px;
   margin-top: 8px;
+  padding-left: 20px;
+  font-size: 1.8em  !important;
+
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 36px;
+}
+
+u{
+  color: #E0DCC5; 
+}
+note{
+  margin-left: 10px;
 }

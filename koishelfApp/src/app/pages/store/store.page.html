@@ -4,7 +4,7 @@
       <ion-icon aria-hidden="true" name="bag" slot="start"></ion-icon>
     </ion-buttons>
     <ion-title><h3>Tienda</h3> </ion-title>
-    <ion-icon aria-hidden="true" name="book" slot="end" [routerLink]="['/mangateca']"></ion-icon>
+ 
   </ion-toolbar>
 </ion-header>
 
@@ -31,6 +31,13 @@
         </ion-col>
     </ion-row>
   </ion-grid>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button class="mangateca-button" [routerLink]="['/mangateca']">
+    <ion-icon name="book"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
  
 </ion-content>
 
