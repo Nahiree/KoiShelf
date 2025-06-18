@@ -152,4 +152,14 @@ export class AuthService {
     toast.present();
   });
 }
+
+clearSessionOnFreshInstall() {
+  const firstRun = localStorage.getItem('first_run');
+
+  if (!firstRun) {
+    localStorage.removeItem('user'); // o el nombre que uses para el token o perfil
+    localStorage.setItem('first_run', 'true');
+  }
+}
+
 }

@@ -3,11 +3,11 @@
     <ion-buttons slot="start">
       <img src="assets/icon/perfil.svg" alt="profile">
     </ion-buttons>
-    <ion-title><h3>Perfil</h3> </ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content fullscreen class="ion-safe-area">
   <ion-grid>
     <ion-row class="ion-justify-content-center ion-align-items-center">
       <ion-col size="auto" class="ion-text-center">
@@ -48,9 +48,10 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  
 </ion-content>
 
 
 <ion-footer>
-  <app-menu></app-menu>
+    <app-menu></app-menu>
 </ion-footer>
